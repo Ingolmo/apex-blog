@@ -32,12 +32,12 @@ Exploramos cómo usar la utilidad **Data Generator** de Oracle APEX para poblar 
 
 1. Entra en tu entorno APEX y navega a la utilidad:  
    **SQL Workshop > Utilities > Data Generator**
-2. Selecciona la opción **Import Blueprint** (ícono de nube con flecha).
-3. Sube el archivo `data_generator_post.json`.
-4. Una vez importado, selecciona el blueprint **Clientes (Ejemplo Blog)**.
+2. Selecciona la opción **Create Blueprint > Import JSON File**.
+3. Sube el archivo `data_generator_post.json` o pega su contenido en la pestaña oportuna.
+4. Una vez importado, selecciona el blueprint **DATA_GENERATOR_POST**.
 5. Haz clic en **Generate Data**, elige tu conexión (workspace/schema) y ejecuta la generación.
 
-> Puedes modificar el número de registros antes de generar. El blueprint está diseñado para insertar directamente en la tablas `DG_PERSONAS` y `DG_MASCOTAS`.
+> Puedes modificar el número de registros antes de generar, afectando el valor de escalado (Row Scaling). Por defecto, se generan en cada invocación 50 personas y 100 mascotas. El blueprint está diseñado para insertar directamente en la tablas `DG_PERSONAS` y `DG_MASCOTAS` si seleccionas la opción Insert Into Database.
 
 ---
 
