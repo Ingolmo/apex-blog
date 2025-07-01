@@ -8,8 +8,8 @@ La idea es mantener aquí el código fuente y materiales complementarios para fa
 
 | Artículo | Carpeta | Descripción |
 |----------|---------|-------------|
-| [Título del post 1](https://juanl.hashnode.dev/titulo-post-1) | `/nombre-carpeta-1` | Breve descripción del ejemplo |
-| [Título del post 2](https://juanl.hashnode.dev/titulo-post-2) | `/nombre-carpeta-2` | Otra descripción del ejemplo |
+| [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/tu-url-final-aqui)  | `/data-generator` | Breve descripción del ejemplo |
+
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.
 
@@ -18,12 +18,12 @@ La idea es mantener aquí el código fuente y materiales complementarios para fa
 Cada carpeta incluye:
 
 - Código fuente del ejemplo
-- Archivos de configuración (cuando aplique)
+- Archivos adicionales (cuando aplique)
 - Un `README.md` con instrucciones específicas
 
 ## 🔧 Requisitos
 
-Los requisitos técnicos dependen de cada ejemplo. Consulta el `README.md` correspondiente a cada carpeta para detalles sobre cómo ejecutar el proyecto.
+Los requisitos técnicos dependen de cada ejemplo. Consulta el `README.md` correspondiente a cada carpeta para detalles sobre cómo ejecutar utilizar cada material.
 
 ## 📬 Contribuciones
 
