@@ -8,7 +8,7 @@ La idea es mantener aquí el código fuente y materiales complementarios para fa
 
 | Artículo | Carpeta | Descripción |
 |----------|---------|-------------|
-| [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/tu-url-final-aqui)  | `/data-generator` | Breve descripción del ejemplo |
+| [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/tu-url-final-aqui)  | `/data-generator` | Este post habla sobre la Utilidad Data Generator, disponible en Oracle APEX desde la versión 22.1, con la que se pueden generar datos de prueba para nuestras aplicaciones |
 
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.
