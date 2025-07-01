@@ -1,4 +1,4 @@
-# 🧪 Proyectos de ejemplo – juanl.hashnode.dev
+# 🧪 Proyectos de ejemplo
 
 Este repositorio contiene archivos, ejemplos, mini apps y otros recursos relacionados con los artículos publicados en mi blog: [juanl.hashnode.dev](https://juanl.hashnode.dev/).
 
@@ -35,7 +35,7 @@ Si llegaste aquí desde GitHub y no conoces el blog, te invito a visitarlo:
 
 📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**
 
-Allí comparto ideas, experimentos y soluciones sobre desarrollo, tecnología y otras cosas que me llaman la atención.
+Allí comparto ideas, experimentos y soluciones sobre desarrollo, tecnología y otras cosas que me llaman la atención dentro del universo Oracle APEX, y en español.
 
 ---
 
