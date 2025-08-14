@@ -9,7 +9,7 @@ La idea es mantener aquí el código fuente y materiales complementarios para fa
 | Artículo | Carpeta | Descripción |
 |----------|---------|-------------|
 | [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/todo-lo-que-debes-saber-sobre-data-generator-en-oracle-apex)  | [data-generator](/data-generator) | Este post habla sobre la Utilidad Data Generator, disponible en Oracle APEX desde la versión 22.1, con la que se pueden generar datos de prueba para nuestras aplicaciones |
-| [Oracle APEX y SQLcl Projects: CI/CD explicado paso a paso](https://juanl.hashnode.dev/tu-url-final-aqui)  | [sqlcl-projects](/sqlcl-projects) | Este post introduce como versionar nuestras aplicaciones APEX y objetos de base de datos con la utilidad SQLcl Projects |
+| [Oracle APEX y SQLcl Projects: CI/CD explicado paso a paso](https://juanl.hashnode.dev/tu-url-final-aqui)  | [sqlcl-projects](/sqlcl-projects) | Este post presenta una introducción a la herramienta SQLcl Projects, para ententender cómo versionar nuestras aplicaciones APEX y objetos de base de datos |
 
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.
