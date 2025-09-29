@@ -1,19 +1,28 @@
-# 🧪 Proyectos de ejemplo
+# 🧪 Proyectos de ejemplo del blog APEX
 
-Este repositorio contiene archivos, ejemplos, mini apps y otros recursos relacionados con los artículos publicados en mi blog: [juanl.hashnode.dev](https://juanl.hashnode.dev/).
+[![Blog](https://img.shields.io/badge/blog-juanl.hashnode.dev-green)](https://juanl.hashnode.dev)
+![GitHub Repo stars](https://img.shields.io/github/stars/juanlopez/apex-blog?style=social)
+![License](https://img.shields.io/github/license/juanlopez/apex-blog)
 
-La idea es mantener aquí el código fuente y materiales complementarios para facilitar su consulta, reproducción y evolución.
+Este repositorio contiene ejemplos, mini apps y recursos complementarios de los artículos publicados en el blog:  
+📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**  
+
+La idea es mantener aquí el código fuente y materiales adicionales para facilitar su consulta, reproducción y evolución.
+
+---
 
 ## 📚 Índice de ejemplos por artículo
 
-| Artículo | Carpeta | Descripción |
-|----------|---------|-------------|
-| [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/todo-lo-que-debes-saber-sobre-data-generator-en-oracle-apex)  | [data-generator](/data-generator) | Este post habla sobre la Utilidad Data Generator, disponible en Oracle APEX desde la versión 22.1, con la que se pueden generar datos de prueba para nuestras aplicaciones |
-| [SQLcl Projects: referencia práctica para CI/CD en Oracle APEX](https://juanl.hashnode.dev/sqlcl-projects-referencia-practica-para-cicd-en-oracle-apex)  | [sqlcl-projects](/sqlcl-projects) | Este post presenta una introducción a la herramienta SQLcl Projects, para ententender cómo versionar nuestras aplicaciones APEX y objetos de base de datos |
-| [Oracle APEX Template Directives: el salto de #PLACEHOLDER# a plantillas inteligentes](https://juanl.hashnode.dev/oracle-apex-template-directives-el-salto-de-placeholder-a-plantillas-inteligentes)  | [template-directives](/template-directives) | Este post introduce y pone en practica el uso de Template Directives (Directivas de Plantilla) para mejorar la apariencia de nuestros componentes APEX sin necesidad de afectar nuestras consultas |
+| Artículo | Carpeta | Descripción | Estado |
+|----------|---------|-------------|--------|
+| [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/todo-lo-que-debes-saber-sobre-data-generator-en-oracle-apex) | [data-generator](/data-generator) | Uso de la utilidad Data Generator (desde APEX 22.1) para crear datos de prueba. | ✅ |
+| [SQLcl Projects: referencia práctica para CI/CD en Oracle APEX](https://juanl.hashnode.dev/sqlcl-projects-referencia-practica-para-cicd-en-oracle-apex) | [sqlcl-projects](/sqlcl-projects) | Introducción a SQLcl Projects para versionado y despliegue en APEX. | ✅ |
+| [Oracle APEX Template Directives: el salto de #PLACEHOLDER# a plantillas inteligentes](https://juanl.hashnode.dev/oracle-apex-template-directives-el-salto-de-placeholder-a-plantillas-inteligentes) | [template-directives](/template-directives) | Práctica con Template Directives para mejorar componentes APEX. | ✅ |
 
+> Este índice se irá actualizando a medida que publique nuevos contenidos.  
+> Estado: ✅ publicado — 🚧 en preparación — 📝 planificado
 
-> Este índice se irá actualizando a medida que publique nuevos contenidos.
+---
 
 ## 📦 Estructura del repositorio
 
@@ -23,22 +32,41 @@ Cada carpeta incluye:
 - Archivos adicionales (cuando aplique)
 - Un `README.md` con instrucciones específicas
 
-## 🔧 Requisitos
+---
 
-Los requisitos técnicos dependen de cada ejemplo. Consulta el `README.md` correspondiente a cada carpeta para detalles sobre cómo ejecutar utilizar cada material.
+## 🚀 Cómo usar este repositorio
 
-## 📬 Contribuciones
+Clona el repo en tu máquina local:
 
-Este repo está pensado como apoyo personal, pero si encuentras errores, tienes sugerencias o quieres colaborar, ¡adelante! Puedes abrir una issue o enviar un PR.
+```bash
+git clone https://github.com/juanlopez/apex-blog.git
+cd apex-blog
+```
 
-## 🧠 Sobre el blog
-
-Si llegaste aquí desde GitHub y no conoces el blog, te invito a visitarlo:
-
-📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**
-
-Allí comparto ideas, experimentos y soluciones sobre desarrollo, tecnología y otras cosas que me llaman la atención dentro del universo Oracle APEX, y en español.
+Después, revisa el `README.md` de cada carpeta para instrucciones detalladas de ejecución o despliegue.
 
 ---
 
-Gracias por pasarte por aquí. ¡Nos leemos!
+## 🔧 Requisitos
+
+Los requisitos técnicos dependen de cada ejemplo.  
+Consulta el `README.md` correspondiente a cada carpeta para más información.
+
+---
+
+## 📬 Contribuciones
+
+Este repo está pensado como apoyo personal, pero si encuentras errores, tienes sugerencias o quieres colaborar, ¡adelante! Estaré encantado si puedes abrir un issue o enviar una PR.
+
+---
+
+## 🧠 Sobre el blog
+
+Si llegaste aquí desde GitHub y no conoces el blog, te invito a visitarlo:  
+📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**
+
+Allí comparto ideas, experimentos y soluciones sobre desarrollo y tecnología en el universo Oracle APEX (en español).
+
+---
+
+⭐ Si este repositorio te resulta útil, considera darle una estrella en GitHub para apoyar el proyecto.
