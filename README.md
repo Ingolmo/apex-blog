@@ -9,7 +9,8 @@ La idea es mantener aquí el código fuente y materiales complementarios para fa
 | Artículo | Carpeta | Descripción |
 |----------|---------|-------------|
 | [Todo lo que debes saber sobre Data Generator en Oracle APEX](https://juanl.hashnode.dev/todo-lo-que-debes-saber-sobre-data-generator-en-oracle-apex)  | [data-generator](/data-generator) | Este post habla sobre la Utilidad Data Generator, disponible en Oracle APEX desde la versión 22.1, con la que se pueden generar datos de prueba para nuestras aplicaciones |
-| [Oracle APEX y SQLcl Projects: CI/CD explicado paso a paso](https://juanl.hashnode.dev/tu-url-final-aqui)  | [sqlcl-projects](/sqlcl-projects) | Este post presenta una introducción a la herramienta SQLcl Projects, para ententender cómo versionar nuestras aplicaciones APEX y objetos de base de datos |
+| [SQLcl Projects: referencia práctica para CI/CD en Oracle APEX](https://juanl.hashnode.dev/sqlcl-projects-referencia-practica-para-cicd-en-oracle-apex)  | [sqlcl-projects](/sqlcl-projects) | Este post presenta una introducción a la herramienta SQLcl Projects, para ententender cómo versionar nuestras aplicaciones APEX y objetos de base de datos |
+| [Oracle APEX Template Directives: el salto de #PLACEHOLDER# a plantillas inteligentes](https://juanl.hashnode.dev/oracle-apex-template-directives-el-salto-de-placeholder-a-plantillas-inteligentes)  | [template-directives](/template-directives) | Este post introduce y pone en practica el uso de Template Directives (Directivas de Plantilla) para mejorar la apariencia de nuestros componentes APEX sin necesidad de afectar nuestras consultas |
 
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.
@@ -41,50 +42,3 @@ Allí comparto ideas, experimentos y soluciones sobre desarrollo, tecnología y 
 ---
 
 Gracias por pasarte por aquí. ¡Nos leemos!
-# Example Template
-
-The introduction summarizes the purpose and function of the project, and should be concise (a brief paragraph or two). This introduction may be the same as the first paragraph on the project page.
-
-For a full description of the module, visit the
-[project page](https://www.oracle.com).
-
-Submit bug reports and feature suggestions, or track changes in the
-[issue queue](https://www.oracle.com).
-
-
-## Table of contents (optional)
-
-- Requirements
-- Installation
-- Configuration
-- Troubleshooting
-- FAQ
-- Maintainers
-
-
-## Requirements (required)
-
-This project requires the following:
-
-- [Hard Work](https://www.noMorePlay.com)
-
-
-## Installation (required, unless a separate INSTALL.md is provided)
-
-Install as you would normally install.
-
-## Configuration (optional)
-
-## Troubleshooting (optional)
-
-## FAQ (optional)
-
-**Q: How do I write a README?**
-
-**A:** Follow this template. It's fun and easy!
-
-## Maintainers (optional)
-
-
-## For more information about SQLcl Projects:
-Reach out to the SQLcl Project Extension documentation by visiting the [Database Application CI/CD Doc Link](https://docs.oracle.com/en/database/oracle/sql-developer-command-line/24.3/sqcug/database-application-ci-cd.html).
