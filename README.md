@@ -2,7 +2,7 @@
 
 [![Blog](https://img.shields.io/badge/blog-juanl.hashnode.dev-green)](https://juanl.hashnode.dev)
 ![GitHub Repo stars](https://img.shields.io/github/stars/juanlopez/apex-blog?style=social)
-![License](https://img.shields.io/github/license/juanlopez/apex-blog)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Este repositorio contiene ejemplos, mini apps y recursos complementarios de los artículos publicados en el blog:  
 📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**  
@@ -66,6 +66,13 @@ Si llegaste aquí desde GitHub y no conoces el blog, te invito a visitarlo:
 📗 **[juanl.hashnode.dev](https://juanl.hashnode.dev/)**
 
 Allí comparto ideas, experimentos y soluciones sobre desarrollo y tecnología en el universo Oracle APEX (en español).
+
+---
+
+## 📄 Licencia
+
+Este repositorio está disponible bajo la licencia MIT.  
+Consulta el archivo [LICENSE](LICENSE) para más información.
 
 ---
 
