@@ -52,9 +52,9 @@ Una vez importada, la aplicación estará lista para usarse.
 La aplicación de ejemplo incluye:
 - Un informe con los documentos disponibles.
 - Enlaces de previsualización que permiten:
-    - Mostrar el PDF embebido en la propia página usando `<object>`.![Previsualización mediante object](images/preview_object.png)
-    - Abrir un diálogo con un `<iframe>` para visualizar el documento de forma aislada.![Previsualización mediante iframe](images/preview_iframe.png)
-- Un proceso de streaming del documento desde base de datos (BLOB) utilizando cabeceras HTTP apropiadas para visualización inline.![Streaming del documento](images/streaming_pdf.png)
+    - Mostrar el PDF embebido en la propia página usando `<object>`.
+    - Abrir un diálogo con un `<iframe>` para visualizar el documento de forma aislada.
+- Un proceso de streaming del documento desde base de datos (BLOB) utilizando cabeceras HTTP apropiadas para visualización inline.
 
 Estos patrones pueden reutilizarse no solo para PDFs, sino también para otros tipos de contenido soportados de forma nativa por el navegador (imágenes, SVG, etc.).
 
