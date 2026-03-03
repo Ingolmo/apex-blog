@@ -77,4 +77,4 @@ Consulta el archivo [LICENSE](LICENSE) para más información.
 
 ---
 
-⭐ Si este repositorio te resulta útil, considera darle una estrella en GitHub para apoyar el proyecto.
+⭐ Si este repositorio te resulta útil, considera darle una estrella en GitHub para apoyar el proyecto..
