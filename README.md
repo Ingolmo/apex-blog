@@ -19,6 +19,7 @@ La idea es mantener aquí el código fuente y materiales adicionales para facili
 | [SQLcl Projects: referencia práctica para CI/CD en Oracle APEX](https://juanl.hashnode.dev/sqlcl-projects-referencia-practica-para-cicd-en-oracle-apex) | [sqlcl-projects](/sqlcl-projects) | Introducción a SQLcl Projects para versionado y despliegue en APEX. | ✅ |
 | [Oracle APEX Template Directives: el salto de #PLACEHOLDER# a plantillas inteligentes](https://juanl.hashnode.dev/oracle-apex-template-directives-el-salto-de-placeholder-a-plantillas-inteligentes) | [template-directives](/template-directives) | Práctica con Template Directives para mejorar componentes APEX. | ✅ |
 | [Cómo mostrar PDFs en Oracle APEX usando `<object>` e `<iframe>`](https://juanl.hashnode.dev/como-mostrar-pdfs-en-oracle-apex-usando-object-e-iframe) | [preview-pdfs](/preview-pdfs) | Ejemplo práctico para previsualizar PDFs y otros archivos en Oracle APEX. | ✅ |
+| [Cómo crear un menú de notificaciones en Oracle APEX](https://juanl.hashnode.dev/menu-notificaciones-oracle-apex) | [notifications-menu](/notifications-menu) | Mejora de UI/UX añadiendo un panel de notificaciones en la barra de navegación. | ✅ |
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.  
 > Estado: ✅ publicado — 🚧 en preparación — 📝 planificado
