@@ -1,10 +1,10 @@
 # Oracle APEX: menú de notificaciones en la barra superior
 
 Este repositorio contiene el **resultado exportado** de la aplicación *Notifications Menu*, creada siguiendo el ejemplo del post  
-**[AQUÍ IRÁ EL ENLACE AL POST]**, donde se construye un pequeño menú de notificaciones en Oracle APEX apoyándonos en componentes nativos como la **Navigation Bar List**, un **Application Item** para el contador, procesos **AJAX** y una bandeja desplegable integrada con **Universal Theme**.
+**[Cómo crear un menú de notificaciones en Oracle APEX](https://juanl.hashnode.dev/menu-notificaciones-oracle-apex)**, donde se construye un pequeño menú de notificaciones en Oracle APEX apoyándonos en componentes nativos como la **Navigation Bar List**, un **Application Item** para el contador, procesos **AJAX** y una bandeja desplegable integrada con **Universal Theme**.
 
 > ℹ️ Una explicación paso a paso de cómo construir esta solución, entender su estructura y adaptarla a otras aplicaciones se encuentra en el post:  
-> **[AQUÍ IRÁ EL ENLACE AL POST]**  
+> **[Cómo crear un menú de notificaciones en Oracle APEX](https://juanl.hashnode.dev/menu-notificaciones-oracle-apex)**  
 > *(Este repositorio forma parte del material complementario del artículo).*
 
 ## Crear modelo e importar la aplicación de ejemplo
