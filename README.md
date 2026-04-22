@@ -20,6 +20,8 @@ La idea es mantener aquí el código fuente y materiales adicionales para facili
 | [Oracle APEX Template Directives: el salto de #PLACEHOLDER# a plantillas inteligentes](https://juanl.hashnode.dev/oracle-apex-template-directives-el-salto-de-placeholder-a-plantillas-inteligentes) | [template-directives](/template-directives) | Práctica con Template Directives para mejorar componentes APEX. | ✅ |
 | [Cómo mostrar PDFs en Oracle APEX usando `<object>` e `<iframe>`](https://juanl.hashnode.dev/como-mostrar-pdfs-en-oracle-apex-usando-object-e-iframe) | [preview-pdfs](/preview-pdfs) | Ejemplo práctico para previsualizar PDFs y otros archivos en Oracle APEX. | ✅ |
 | [Cómo crear un menú de notificaciones en Oracle APEX](https://juanl.hashnode.dev/menu-notificaciones-oracle-apex) | [notifications-menu](/notifications-menu) | Mejora de UI/UX añadiendo un panel de notificaciones en la barra de navegación. | ✅ |
+| [Generate Text with AI en Oracle APEX 24.2: un ejemplo útil más allá del típico resumen](https://juanl.hashnode.dev/generate-text-with-ai-oracle-apex-handoff-turnos) | [generate-text-with-ai](/generate-text-with-ai) | Aprende a usar Generate Text with AI en Oracle APEX 24.2 para generar contenido con IA de forma declarativa, con un ejemplo práctico de handoff entre turnos. | ✅ |
+
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.  
 > Estado: ✅ publicado — 🚧 en preparación — 📝 planificado
