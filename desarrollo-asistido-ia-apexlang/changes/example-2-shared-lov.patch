@@ -1,0 +1,59 @@
+diff --git a/applications/demo-apex-lang/pages/p00002-customers.apx b/applications/demo-apex-lang/pages/p00002-customers.apx
+--- a/applications/demo-apex-lang/pages/p00002-customers.apx
++++ b/applications/demo-apex-lang/pages/p00002-customers.apx
+@@ -92,10 +92,13 @@ page 2 (
+         }
+ 
+         column CONTACT_CHANNEL (
+-            type: plainText
++            type: plainTextBasedOnLov
+             heading {
+                 heading: Contact Channel
+             }
++            lov {
++                lov: @contact-channel
++            }
+             layout {
+                 sequence: 3
+             }
+diff --git a/applications/demo-apex-lang/pages/p00003-ald-customer.apx b/applications/demo-apex-lang/pages/p00003-ald-customer.apx
+--- a/applications/demo-apex-lang/pages/p00003-ald-customer.apx
++++ b/applications/demo-apex-lang/pages/p00003-ald-customer.apx
+@@ -66,8 +66,8 @@ page 3 (
+             alignment: left
+         }
+         lov {
+-            type: staticValues
+-            staticValues: STATIC:Email;EMAIL,Phone;PHONE
++            type: sharedComponent
++            lov: @contact-channel
+             displayExtraValues: false
+             nullDisplayValue: - Select -
+         }
+diff --git a/applications/demo-apex-lang/shared-components/lovs.apx b/applications/demo-apex-lang/shared-components/lovs.apx
+--- a/applications/demo-apex-lang/shared-components/lovs.apx
++++ b/applications/demo-apex-lang/shared-components/lovs.apx
+@@ -18,3 +18,22 @@ lov boolean (
+ 
+ )
+ 
++lov contact-channel (
++    name: CONTACT_CHANNEL
++    source {
++        location: staticValues
++    }
++
++    entry email (
++        sequence: 10
++        display: Email
++        return: EMAIL
++    )
++
++    entry phone (
++        sequence: 20
++        display: Phone
++        return: PHONE
++    )
++
++)
++
