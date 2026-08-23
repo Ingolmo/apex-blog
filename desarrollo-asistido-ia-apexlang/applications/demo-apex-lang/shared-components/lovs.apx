@@ -1,0 +1,39 @@
+lov boolean (
+    name: BOOLEAN
+    source {
+        location: staticValues
+    }
+
+    entry false (
+        sequence: 2
+        display: No
+        return: FALSE
+    )
+
+    entry true (
+        sequence: 1
+        display: Yes
+        return: TRUE
+    )
+
+)
+
+lov contact-channel (
+    name: CONTACT_CHANNEL
+    source {
+        location: staticValues
+    }
+
+    entry email (
+        sequence: 10
+        display: Email
+        return: EMAIL
+    )
+
+    entry phone (
+        sequence: 20
+        display: Phone
+        return: PHONE
+    )
+
+)
