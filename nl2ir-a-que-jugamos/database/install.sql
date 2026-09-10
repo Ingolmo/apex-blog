@@ -200,22 +200,6 @@ using (
            date '2026-01-05', 19.95, null, 'Y' from dual
 ) s
 on (t.game_id = s.game_id)
-when matched then update set
-    t.title                  = s.title,
-    t.edition_ruleset        = s.edition_ruleset,
-    t.cultural_scope         = s.cultural_scope,
-    t.game_type_code         = s.game_type_code,
-    t.play_mode_code         = s.play_mode_code,
-    t.min_players            = s.min_players,
-    t.max_players            = s.max_players,
-    t.best_player_count      = s.best_player_count,
-    t.reference_duration_min = s.reference_duration_min,
-    t.complexity_code        = s.complexity_code,
-    t.language_dep_code      = s.language_dep_code,
-    t.acquired_on            = s.acquired_on,
-    t.purchase_price_eur     = s.purchase_price_eur,
-    t.source_url             = s.source_url,
-    t.active_yn              = s.active_yn
 when not matched then insert (
     game_id, title, edition_ruleset, cultural_scope, game_type_code,
     play_mode_code, min_players, max_players, best_player_count,
@@ -265,12 +249,6 @@ using (
     union all select 1032, 28, date '2026-08-08', 5, 52, 'Y' from dual
 ) s
 on (t.session_id = s.session_id)
-when matched then update set
-    t.game_id             = s.game_id,
-    t.played_on           = s.played_on,
-    t.player_count        = s.player_count,
-    t.actual_duration_min = s.actual_duration_min,
-    t.completed_yn        = s.completed_yn
 when not matched then insert (
     session_id, game_id, played_on, player_count,
     actual_duration_min, completed_yn

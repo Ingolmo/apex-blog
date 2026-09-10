@@ -8,3 +8,5 @@ La aplicación está disponible en dos formatos:
 - `application/sql/f111.sql`: exportación SQL estándar de APEX.
 
 No contiene secretos. Ambas exportaciones incluyen la definición de una credencial sin valor; proporciona siempre una credencial propia del entorno de destino.
+
+Las exportaciones neutralizan deliberadamente el `checksumSalt` para que no contengan un secreto reutilizable. Después de importar la aplicación, regenera ese valor desde `Shared Components > Security Attributes` mediante `Expire Bookmarks` antes de utilizarla fuera de un entorno de pruebas.

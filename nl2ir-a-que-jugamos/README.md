@@ -24,6 +24,8 @@ No se incluyen claves, valores de credencial ni datos reales. Los valores de `ch
 4. En **Shared Components > Application Definition Attributes**, asigna el servicio generativo al atributo de IA de la aplicación si no quedó resuelto durante la importación.
 5. Ejecuta las páginas V0–V4 y prueba las preguntas propuestas más abajo.
 
+Después de importar cualquiera de las dos exportaciones, regenera el `checksumSalt` de la aplicación antes de usarla fuera de un entorno de pruebas. En APEX, abre `Shared Components > Security Attributes` y utiliza `Expire Bookmarks` para invalidar los enlaces y valores protegidos generados con el salt neutralizado de la exportación. Esto evita dejar una clave pública y predecible en una aplicación con Session State Protection.
+
 ### Importar el SQL estándar
 
 En App Builder elige **Import**, selecciona [`application/sql/f111.sql`](application/sql/f111.sql) y asigna un identificador de aplicación disponible. El export incluye una definición de servicio `Open AI` que pide la credencial al importar; puedes conservarla y aportar tu credencial, o bien usar un servicio ya existente y asignarlo después a la aplicación.
