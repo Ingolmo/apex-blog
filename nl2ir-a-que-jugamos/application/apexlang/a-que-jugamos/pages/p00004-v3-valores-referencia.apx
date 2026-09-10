@@ -1,0 +1,424 @@
+page 4 (
+    name: V3 · Valores de referencia
+    alias: V3-VALORES-REFERENCIA
+    title: V3 · Valores de referencia
+    pageGroup: @experimento-nl2ir
+    appearance {
+        pageTemplate: @/standard
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+    }
+    security {
+        authorizationScheme: mustNotBePublicUser
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+    help {
+        helpText: Cuarta etapa del experimento. Conserva el contexto de V2 y añade los significados permitidos para los códigos de tipo, modo, complejidad y dependencia del idioma.
+    }
+
+    region v3-report (
+        name: V3 · Valores de referencia
+        type: interactiveReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select l.game_id
+                     , l.title
+                     , l.edition_ruleset
+                     , l.cultural_scope
+                     , l.game_type_code
+                     , l.play_mode_code
+                     , l.min_players
+                     , l.max_players
+                     , l.reference_duration_min
+                     , l.complexity_code
+                     , l.language_dep_code
+                     , l.play_count
+                     , l.avg_duration_min
+                  from nl2ir_v_library l
+                 order by l.title
+                ```
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        componentAppearance {
+            showNullValuesAs: -
+        }
+        pagination {
+            type: rowRangesXToY
+        }
+        performance {
+            maxRowsToProcess: 1000
+        }
+        messages {
+            whenNoDataFound: No hay juegos que coincidan con la configuración actual del informe.
+            whenMoreDataFound: Hay más de #MAX_ROW_COUNT# filas. Aplica algún filtro para acotar el resultado.
+        }
+        genAI {
+            naturalLanguageSupport: true
+            reportContext: Cada fila representa un juego de una colección personal. Las partidas registradas son sintéticas y sólo se utilizan para este laboratorio. No hay valoraciones, precios ni datos externos.
+        }
+        download {
+            formats: csv
+        }
+        advanced {
+            savedReportMappingIdentifier: 29280332308367896
+        }
+
+        column AVG_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: Duración media en minutos
+                alignment: end
+            }
+            layout {
+                sequence: 130
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: M
+            }
+            genAI {
+                columnContext: Media de duración de las partidas completadas, expresada en minutos. Puede estar vacía si no hay partidas.
+            }
+        )
+
+        column COMPLEXITY_CODE (
+            type: plainText
+            heading {
+                heading: Complejidad
+            }
+            layout {
+                sequence: 100
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: J
+            }
+            genAI {
+                columnContext: Nivel aproximado de dificultad. Usa LIGHT para ligero o sencillo, MEDIUM para medio o intermedio y HEAVY para complejo o exigente.
+                referenceDataType: sharedComponent
+                lov: @nl2ir-ai-complexity-codes
+            }
+        )
+
+        column CULTURAL_SCOPE (
+            type: plainText
+            heading {
+                heading: Ámbito
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+            genAI {
+                columnContext: Ámbito cultural con el que se asocia el juego en este conjunto de datos; no mide popularidad.
+            }
+        )
+
+        column EDITION_RULESET (
+            type: plainText
+            heading {
+                heading: Edición o reglas
+            }
+            layout {
+                sequence: 30
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: C
+            }
+            genAI {
+                columnContext: Edición comercial concreta o variante de reglas fijada para el laboratorio; no presupone unas reglas universales.
+            }
+        )
+
+        column GAME_ID (
+            type: hidden
+            heading {
+                heading: ID
+            }
+            layout {
+                sequence: 10
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column GAME_TYPE_CODE (
+            type: plainText
+            heading {
+                heading: Tipo de juego
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+            genAI {
+                columnContext: Clasificación general del juego. Usa TRAD_CARD para cartas tradicionales, TRAD_BOARD para tablero tradicional, FAMILY para familiar, STRATEGY para estrategia, PARTY para fiesta y FILLER para un juego breve y fácil de sacar a mesa.
+                referenceDataType: sharedComponent
+                lov: @nl2ir-ai-game-type-codes
+            }
+        )
+
+        column LANGUAGE_DEP_CODE (
+            type: plainText
+            heading {
+                heading: Dependencia del idioma
+            }
+            layout {
+                sequence: 110
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: K
+            }
+            genAI {
+                columnContext: Cantidad de texto que hace falta comprender durante la partida. Usa NONE para ninguna, LOW para baja o poca, MEDIUM para media y HIGH para alta o mucha. Sin depender mucho del idioma incluye NONE o LOW.
+                referenceDataType: sharedComponent
+                lov: @nl2ir-ai-language-dependence-codes
+            }
+        )
+
+        column MAX_PLAYERS (
+            type: plainText
+            heading {
+                heading: Máximo de jugadores
+                alignment: end
+            }
+            layout {
+                sequence: 80
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: H
+            }
+            genAI {
+                columnContext: Para que un juego admita a N personas, este valor debe ser mayor o igual que N.
+            }
+        )
+
+        column MIN_PLAYERS (
+            type: plainText
+            heading {
+                heading: Mínimo de jugadores
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: G
+            }
+            genAI {
+                columnContext: Para que un juego admita a N personas, este valor debe ser menor o igual que N.
+            }
+        )
+
+        column PLAY_COUNT (
+            type: plainText
+            heading {
+                heading: Partidas completadas
+                alignment: end
+            }
+            layout {
+                sequence: 120
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: L
+            }
+            genAI {
+                columnContext: Número de sesiones completadas registradas. Un valor cero significa que el juego todavía no ha tocado mesa.
+            }
+        )
+
+        column PLAY_MODE_CODE (
+            type: plainText
+            heading {
+                heading: Modo de juego
+            }
+            layout {
+                sequence: 60
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: F
+            }
+            genAI {
+                columnContext: Indica cómo interactúan las personas. Usa COMP para competitivo, COOP para cooperativo o sin competir, TEAM para por equipos y MIXED para modalidad mixta.
+                referenceDataType: sharedComponent
+                lov: @nl2ir-ai-play-mode-codes
+            }
+        )
+
+        column REFERENCE_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: Duración de referencia en minutos
+                alignment: end
+            }
+            layout {
+                sequence: 90
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: I
+            }
+            genAI {
+                columnContext: Duración orientativa de una partida, expresada siempre en minutos. Menos de una hora significa menos de 60.
+            }
+        )
+
+        column TITLE (
+            type: plainText
+            heading {
+                heading: Juego
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+            genAI {
+                columnContext: Nombre del juego o de la edición incluida en la colección.
+            }
+        )
+
+        savedReport primary (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 50
+            }
+
+            displayColumn AVG_DURATION_MIN (
+                sequence: 13
+            )
+
+            displayColumn COMPLEXITY_CODE (
+                sequence: 10
+            )
+
+            displayColumn CULTURAL_SCOPE (
+                sequence: 4
+            )
+
+            displayColumn EDITION_RULESET (
+                sequence: 3
+            )
+
+            displayColumn GAME_ID (
+                sequence: 1
+            )
+
+            displayColumn GAME_TYPE_CODE (
+                sequence: 5
+            )
+
+            displayColumn LANGUAGE_DEP_CODE (
+                sequence: 11
+            )
+
+            displayColumn MAX_PLAYERS (
+                sequence: 8
+            )
+
+            displayColumn MIN_PLAYERS (
+                sequence: 7
+            )
+
+            displayColumn PLAY_COUNT (
+                sequence: 12
+            )
+
+            displayColumn PLAY_MODE_CODE (
+                sequence: 6
+            )
+
+            displayColumn REFERENCE_DURATION_MIN (
+                sequence: 9
+            )
+
+            displayColumn TITLE (
+                sequence: 2
+            )
+
+        )
+
+    )
+
+    region v3-title (
+        name: V3 · Valores de referencia
+        type: breadcrumb
+        source {
+            breadcrumb: @breadcrumb
+        }
+        layout {
+            sequence: 20
+            slot: breadcrumbBar
+        }
+        appearance {
+            template: @/title-bar
+            templateOptions: #DEFAULT#
+        }
+        componentAppearance {
+            breadcrumbTemplate: @/breadcrumb
+            templateOptions: #DEFAULT#
+        }
+    )
+
+)
+

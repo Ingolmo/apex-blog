@@ -1,0 +1,379 @@
+page 1 (
+    name: V0 · Metadatos técnicos
+    alias: V0-METADATOS-TECNICOS
+    title: V0 · Metadatos técnicos
+    pageGroup: @experimento-nl2ir
+    appearance {
+        pageTemplate: @/standard
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+    }
+    security {
+        authorizationScheme: mustNotBePublicUser
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+    help {
+        helpText: Línea base del experimento. El informe conserva nombres y códigos técnicos, sin contexto adicional ni valores de referencia. Utiliza aquí las mismas preguntas que en las páginas siguientes.
+    }
+
+    region v0-report (
+        name: V0 · Metadatos técnicos
+        type: interactiveReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select l.game_id
+                     , l.title
+                     , l.edition_ruleset
+                     , l.cultural_scope
+                     , l.game_type_code
+                     , l.play_mode_code
+                     , l.min_players
+                     , l.max_players
+                     , l.reference_duration_min
+                     , l.complexity_code
+                     , l.language_dep_code
+                     , l.play_count
+                     , l.avg_duration_min
+                  from nl2ir_v_library l
+                 order by l.title
+                ```
+        }
+        layout {
+            sequence: 10
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        componentAppearance {
+            showNullValuesAs: -
+        }
+        pagination {
+            type: rowRangesXToY
+        }
+        performance {
+            maxRowsToProcess: 1000
+        }
+        messages {
+            whenNoDataFound: No hay juegos que coincidan con la configuración actual del informe.
+            whenMoreDataFound: Hay más de #MAX_ROW_COUNT# filas. Aplica algún filtro para acotar el resultado.
+        }
+        genAI {
+            naturalLanguageSupport: true
+        }
+        download {
+            formats: csv
+        }
+        advanced {
+            savedReportMappingIdentifier: 29275202580367490
+        }
+
+        column AVG_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: AVG_DURATION_MIN
+                alignment: end
+            }
+            layout {
+                sequence: 130
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: M
+            }
+        )
+
+        column COMPLEXITY_CODE (
+            type: plainText
+            heading {
+                heading: COMPLEXITY_CODE
+            }
+            layout {
+                sequence: 100
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: J
+            }
+        )
+
+        column CULTURAL_SCOPE (
+            type: plainText
+            heading {
+                heading: CULTURAL_SCOPE
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+        )
+
+        column EDITION_RULESET (
+            type: plainText
+            heading {
+                heading: EDITION_RULESET
+            }
+            layout {
+                sequence: 30
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: C
+            }
+        )
+
+        column GAME_ID (
+            type: hidden
+            heading {
+                heading: GAME_ID
+            }
+            layout {
+                sequence: 10
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column GAME_TYPE_CODE (
+            type: plainText
+            heading {
+                heading: GAME_TYPE_CODE
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+        )
+
+        column LANGUAGE_DEP_CODE (
+            type: plainText
+            heading {
+                heading: LANGUAGE_DEP_CODE
+            }
+            layout {
+                sequence: 110
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: K
+            }
+        )
+
+        column MAX_PLAYERS (
+            type: plainText
+            heading {
+                heading: MAX_PLAYERS
+                alignment: end
+            }
+            layout {
+                sequence: 80
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: H
+            }
+        )
+
+        column MIN_PLAYERS (
+            type: plainText
+            heading {
+                heading: MIN_PLAYERS
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: G
+            }
+        )
+
+        column PLAY_COUNT (
+            type: plainText
+            heading {
+                heading: PLAY_COUNT
+                alignment: end
+            }
+            layout {
+                sequence: 120
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: L
+            }
+        )
+
+        column PLAY_MODE_CODE (
+            type: plainText
+            heading {
+                heading: PLAY_MODE_CODE
+            }
+            layout {
+                sequence: 60
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: F
+            }
+        )
+
+        column REFERENCE_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: REFERENCE_DURATION_MIN
+                alignment: end
+            }
+            layout {
+                sequence: 90
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: I
+            }
+        )
+
+        column TITLE (
+            type: plainText
+            heading {
+                heading: TITLE
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+        )
+
+        savedReport primary (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 50
+            }
+
+            displayColumn AVG_DURATION_MIN (
+                sequence: 13
+            )
+
+            displayColumn COMPLEXITY_CODE (
+                sequence: 10
+            )
+
+            displayColumn CULTURAL_SCOPE (
+                sequence: 4
+            )
+
+            displayColumn EDITION_RULESET (
+                sequence: 3
+            )
+
+            displayColumn GAME_ID (
+                sequence: 1
+            )
+
+            displayColumn GAME_TYPE_CODE (
+                sequence: 5
+            )
+
+            displayColumn LANGUAGE_DEP_CODE (
+                sequence: 11
+            )
+
+            displayColumn MAX_PLAYERS (
+                sequence: 8
+            )
+
+            displayColumn MIN_PLAYERS (
+                sequence: 7
+            )
+
+            displayColumn PLAY_COUNT (
+                sequence: 12
+            )
+
+            displayColumn PLAY_MODE_CODE (
+                sequence: 6
+            )
+
+            displayColumn REFERENCE_DURATION_MIN (
+                sequence: 9
+            )
+
+            displayColumn TITLE (
+                sequence: 2
+            )
+
+        )
+
+    )
+
+    region v0-title (
+        name: V0 · Metadatos técnicos
+        type: breadcrumb
+        source {
+            breadcrumb: @breadcrumb
+        }
+        layout {
+            sequence: 20
+            slot: breadcrumbBar
+        }
+        appearance {
+            template: @/title-bar
+            templateOptions: #DEFAULT#
+        }
+        componentAppearance {
+            breadcrumbTemplate: @/breadcrumb
+            templateOptions: #DEFAULT#
+        }
+    )
+
+)
+
