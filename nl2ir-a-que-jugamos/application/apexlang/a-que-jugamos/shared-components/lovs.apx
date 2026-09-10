@@ -1,0 +1,328 @@
+lov boolean (
+    name: BOOLEAN
+    source {
+        location: staticValues
+    }
+
+    entry false (
+        sequence: 2
+        display: No
+        return: FALSE
+    )
+
+    entry true (
+        sequence: 1
+        display: Yes
+        return: TRUE
+    )
+
+)
+
+lov nl2ir-ai-complexity-codes (
+    name: NL2IR_AI_COMPLEXITY_CODES
+    source {
+        location: staticValues
+    }
+
+    entry heavy (
+        sequence: 30
+        display: HEAVY
+        return: HEAVY
+    )
+
+    entry light (
+        sequence: 10
+        display: LIGHT
+        return: LIGHT
+    )
+
+    entry medium (
+        sequence: 20
+        display: MEDIUM
+        return: MEDIUM
+    )
+
+)
+
+lov nl2ir-ai-game-type-codes (
+    name: NL2IR_AI_GAME_TYPE_CODES
+    source {
+        location: staticValues
+    }
+
+    entry family (
+        sequence: 30
+        display: FAMILY
+        return: FAMILY
+    )
+
+    entry filler (
+        sequence: 60
+        display: FILLER
+        return: FILLER
+    )
+
+    entry party (
+        sequence: 50
+        display: PARTY
+        return: PARTY
+    )
+
+    entry strategy (
+        sequence: 40
+        display: STRATEGY
+        return: STRATEGY
+    )
+
+    entry traditional-board (
+        sequence: 20
+        display: TRAD_BOARD
+        return: TRAD_BOARD
+    )
+
+    entry traditional-cards (
+        sequence: 10
+        display: TRAD_CARD
+        return: TRAD_CARD
+    )
+
+)
+
+lov nl2ir-ai-language-dependence-codes (
+    name: NL2IR_AI_LANGUAGE_DEPENDENCE_CODES
+    source {
+        location: staticValues
+    }
+
+    entry high (
+        sequence: 40
+        display: HIGH
+        return: HIGH
+    )
+
+    entry low (
+        sequence: 20
+        display: LOW
+        return: LOW
+    )
+
+    entry medium (
+        sequence: 30
+        display: MEDIUM
+        return: MEDIUM
+    )
+
+    entry none (
+        sequence: 10
+        display: NONE
+        return: NONE
+    )
+
+)
+
+lov nl2ir-ai-play-mode-codes (
+    name: NL2IR_AI_PLAY_MODE_CODES
+    source {
+        location: staticValues
+    }
+
+    entry competitive (
+        sequence: 10
+        display: COMP
+        return: COMP
+    )
+
+    entry cooperative (
+        sequence: 20
+        display: COOP
+        return: COOP
+    )
+
+    entry mixed (
+        sequence: 40
+        display: MIXED
+        return: MIXED
+    )
+
+    entry teams (
+        sequence: 30
+        display: TEAM
+        return: TEAM
+    )
+
+)
+
+lov nl2ir-ai-played-codes (
+    name: NL2IR_AI_PLAYED_CODES
+    source {
+        location: staticValues
+    }
+
+    entry no (
+        sequence: 20
+        display: N
+        return: N
+    )
+
+    entry yes (
+        sequence: 10
+        display: Y
+        return: Y
+    )
+
+)
+
+lov nl2ir-complexities (
+    name: NL2IR_COMPLEXITIES
+    source {
+        location: staticValues
+    }
+
+    entry heavy (
+        sequence: 30
+        display: Complejo
+        return: HEAVY
+    )
+
+    entry light (
+        sequence: 10
+        display: Ligero
+        return: LIGHT
+    )
+
+    entry medium (
+        sequence: 20
+        display: Medio
+        return: MEDIUM
+    )
+
+)
+
+lov nl2ir-game-types (
+    name: NL2IR_GAME_TYPES
+    source {
+        location: staticValues
+    }
+
+    entry family (
+        sequence: 30
+        display: Familiar
+        return: FAMILY
+    )
+
+    entry filler (
+        sequence: 60
+        display: Filler
+        return: FILLER
+    )
+
+    entry party (
+        sequence: 50
+        display: Fiesta
+        return: PARTY
+    )
+
+    entry strategy (
+        sequence: 40
+        display: Estrategia
+        return: STRATEGY
+    )
+
+    entry traditional-board (
+        sequence: 20
+        display: Tablero tradicional
+        return: TRAD_BOARD
+    )
+
+    entry traditional-cards (
+        sequence: 10
+        display: Cartas tradicionales
+        return: TRAD_CARD
+    )
+
+)
+
+lov nl2ir-language-dependence (
+    name: NL2IR_LANGUAGE_DEPENDENCE
+    source {
+        location: staticValues
+    }
+
+    entry high (
+        sequence: 40
+        display: Alta
+        return: HIGH
+    )
+
+    entry low (
+        sequence: 20
+        display: Baja
+        return: LOW
+    )
+
+    entry medium (
+        sequence: 30
+        display: Media
+        return: MEDIUM
+    )
+
+    entry none (
+        sequence: 10
+        display: Ninguna
+        return: NONE
+    )
+
+)
+
+lov nl2ir-play-modes (
+    name: NL2IR_PLAY_MODES
+    source {
+        location: staticValues
+    }
+
+    entry competitive (
+        sequence: 10
+        display: Competitivo
+        return: COMP
+    )
+
+    entry cooperative (
+        sequence: 20
+        display: Cooperativo
+        return: COOP
+    )
+
+    entry mixed (
+        sequence: 40
+        display: Mixto
+        return: MIXED
+    )
+
+    entry teams (
+        sequence: 30
+        display: Por equipos
+        return: TEAM
+    )
+
+)
+
+lov nl2ir-played (
+    name: NL2IR_PLAYED
+    source {
+        location: staticValues
+    }
+
+    entry no (
+        sequence: 20
+        display: No
+        return: N
+    )
+
+    entry yes (
+        sequence: 10
+        display: Sí
+        return: Y
+    )
+
+)
+
