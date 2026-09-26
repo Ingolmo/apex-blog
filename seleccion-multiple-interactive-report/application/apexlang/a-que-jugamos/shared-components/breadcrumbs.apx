@@ -1,0 +1,108 @@
+breadcrumb breadcrumb (
+    name: Breadcrumb
+
+    entry evaluate-nl2ir (
+        name: Evaluar NL2IR
+        pageNumber: 2
+        execution {
+            sequence: 20
+        }
+        link {
+            target: {
+                page: 2
+            }
+        }
+    )
+
+    entry home (
+        name: Inicio
+        pageNumber: 1
+        execution {
+            sequence: 10
+        }
+        link {
+            target: {
+                page: 1
+            }
+        }
+    )
+
+    entry prepare-game-night (
+        name: Preparar propuesta
+        pageNumber: 8
+        execution {
+            sequence: 80
+        }
+        link {
+            target: {
+                page: 8
+            }
+        }
+    )
+
+    entry v0 (
+        name: V0 · Metadatos técnicos
+        pageNumber: 3
+        execution {
+            sequence: 10
+        }
+        link {
+            target: {
+                page: 3
+            }
+        }
+    )
+
+    entry v1 (
+        name: V1 · Columnas comprensibles
+        pageNumber: 4
+        execution {
+            sequence: 20
+        }
+        link {
+            target: {
+                page: 4
+            }
+        }
+    )
+
+    entry v2 (
+        name: V2 · Contexto
+        pageNumber: 5
+        execution {
+            sequence: 30
+        }
+        link {
+            target: {
+                page: 5
+            }
+        }
+    )
+
+    entry v3 (
+        name: V3 · Valores de referencia
+        pageNumber: 6
+        execution {
+            sequence: 40
+        }
+        link {
+            target: {
+                page: 6
+            }
+        }
+    )
+
+    entry v4 (
+        name: V4 · Columnas derivadas
+        pageNumber: 7
+        execution {
+            sequence: 50
+        }
+        link {
+            target: {
+                page: 7
+            }
+        }
+    )
+
+)

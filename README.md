@@ -23,6 +23,7 @@ La idea es mantener aquí el código fuente y materiales adicionales para facili
 | [Generate Text with AI en Oracle APEX 24.2: un ejemplo útil más allá del típico resumen](https://juanl.hashnode.dev/generate-text-with-ai-oracle-apex-handoff-turnos) | [generate-text-with-ai](/generate-text-with-ai) | Aprende a usar Generate Text with AI en Oracle APEX 24.2 para generar contenido con IA de forma declarativa, con un ejemplo práctico de handoff entre turnos. | ✅ |
 | [Probando el desarrollo asistido con IA y APEXlang en Oracle APEX 26.1](https://juanl.hashnode.dev/desarrollo-asistido-ia-apexlang) | [desarrollo-asistido-ia-apexlang](/desarrollo-asistido-ia-apexlang) | Baseline APEXlang, dos cambios delimitados, fuente SQL portable y diffs reproducibles. | ✅ |
 | [NL2IR en español con Oracle APEX 26.1: ¿a qué jugamos?](https://juanl.hashnode.dev/nl2ir-a-que-jugamos-oracle-apex-26-1) | [nl2ir-a-que-jugamos](/nl2ir-a-que-jugamos) | Laboratorio reproducible de Natural Language to Interactive Report: contexto, valores de referencia, multidioma y casos límite. | ✅ |
+| [Selección múltiple en Interactive Reports con APEX 26.1](https://juanl.hashnode.dev/seleccion-multiple-interactive-report-oracle-apex-26-1) | [seleccion-multiple-interactive-report](/seleccion-multiple-interactive-report) | Selector de filas, propuesta de partida y validación servidor. Instalación completa o ampliación del ejercicio NL2IR. | ✅ |
 
 
 > Este índice se irá actualizando a medida que publique nuevos contenidos.  
@@ -45,7 +46,7 @@ Cada carpeta incluye:
 Clona el repo en tu máquina local:
 
 ```bash
-git clone https://github.com/juanlopez/apex-blog.git
+git clone https://github.com/Ingolmo/apex-blog.git
 cd apex-blog
 ```
 
