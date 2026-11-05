@@ -12,8 +12,9 @@ no incorpora aún catálogo externo, estanterías por persona ni registro de par
 
 La página 20 está guardada en la app 111 local. Se han verificado propiedades, HTML/CSS,
 consulta y conservación de las páginas anteriores; las capturas incluidas son de Builder.
-La validación visual en ejecución, los filtros/NL2IR, teclado y tamaños siguen pendientes
-porque no había sesión de ejecución disponible. No se declara ese recorrido probado.
+Se ha comprobado la ejecución a 1920 × 1080: IDs únicos, CSS calculado, filtro nativo de
+Carcassonne y recuperación de los 28 juegos tras quitarlo y recargar. Quedan pendientes
+el antes sin CSS, NL2IR, paginación y la revisión completa de accesibilidad y otros tamaños.
 
 ## Requisitos
 
@@ -131,3 +132,7 @@ pasa de A a P para evitar una colisión con GAME_ID que detectó el compilador. 
 
 Consulta la [licencia MIT](../LICENSE) del repositorio. Estado editorial: en preparación;
 ni el artículo ni esta rama implican publicación o fusión aprobadas.
+
+![Mi colección en escritorio, 1920 × 1080](evidence/04-mi-coleccion-escritorio.jpg)
+
+![Filtro nativo Carcassonne](evidence/05-filtro-carcassonne.jpg)

@@ -26,6 +26,24 @@
       "height": 720,
       "size_bytes": 64224,
       "sha256": "52e9b74da960e60594985771ee08cf6a28659ce25b595de8af3b9a41be343aee"
+    },
+    {
+      "file": "04-mi-coleccion-escritorio.jpg",
+      "source": "Captura propia de ejecución APEX 26.1, app 111/página 20; viewport completo de escritorio",
+      "media_type": "image/jpeg",
+      "width": 1920,
+      "height": 1080,
+      "size_bytes": 192232,
+      "sha256": "0910db0a103f74af4c76390f5502ee5b59ece21d3b7e6491fa0995022081eac8"
+    },
+    {
+      "file": "05-filtro-carcassonne.jpg",
+      "source": "Captura propia de ejecución APEX 26.1, app 111/página 20; viewport completo de escritorio",
+      "media_type": "image/jpeg",
+      "width": 1920,
+      "height": 1080,
+      "size_bytes": 80025,
+      "sha256": "f2b7b8258c7f390761408d04a25b944385d9bf83abfccec3bbed203a68eedd2b"
     }
   ]
 }

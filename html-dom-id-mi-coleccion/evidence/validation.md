@@ -26,3 +26,15 @@ es independiente de la sesión de ejecución; ésta no estuvo disponible durante
 
 No se ha reimportado el snapshot público en otro entorno. Estos límites impiden presentar
 el ejemplo como publicación terminada; el PR queda como borrador para revisión y validación.
+
+## Comprobación posterior con sesión de ejecución
+
+Capturas de escritorio a 1920 × 1080 mediante screenshot del viewport completo, independiente
+del panel lateral del chat. Los IDs collection_intro y my_collection aparecen una sola vez.
+El estilo calculado confirma padding de 24 px y borde lateral de 4 px en la bienvenida, y
+borde superior de 2 px en el informe. La búsqueda nativa Carcassonne devuelve una fila;
+retirar el filtro y recargar restaura los 28 juegos. No se ha modificado la app para capturar.
+
+Se conservan las capturas 04 (colección) y 05 (filtro). Quedan pendientes el antes sin CSS,
+la prueba NL2IR, paginación, revisión completa de teclado/encabezados, móvil, zoom y contraste.
+La comprobación anterior de falta de login describe el primer montaje, no el estado actual.
