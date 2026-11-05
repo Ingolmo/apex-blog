@@ -1,0 +1,17 @@
+/* Own region content, scoped by the region's HTML DOM ID. */
+#collection_intro .collection-hero {
+    padding: 1.5rem;
+    border-inline-start: 0.25rem solid #2563eb;
+}
+
+#collection_intro .collection-eyebrow {
+    margin-block: 0 0.5rem;
+    font-weight: 600;
+}
+
+/* Style the collection container, preserving its native report controls. */
+#my_collection {
+    margin-block-start: 1.5rem;
+    padding-block-start: 1rem;
+    border-block-start: 2px solid #2563eb;
+}

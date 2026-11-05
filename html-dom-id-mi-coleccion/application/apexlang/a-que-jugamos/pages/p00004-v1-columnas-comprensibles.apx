@@ -1,0 +1,417 @@
+page 4 (
+    name: V1 · Columnas comprensibles
+    alias: V1-COLUMNAS-COMPRENSIBLES
+    title: V1 · Columnas comprensibles
+    pageGroup: @experimento-nl2ir
+    appearance {
+        pageTemplate: @/standard
+        templateOptions: #DEFAULT#
+    }
+    navigation {
+        cursorFocus: doNotFocusCursor
+    }
+    security {
+        authorizationScheme: mustNotBePublicUser
+        pageAccessProtection: argumentsMustHaveChecksum
+        formAutoComplete: false
+    }
+    help {
+        helpText: Segunda etapa del experimento. Los datos son los mismos que en V0, pero las columnas tienen etiquetas comprensibles y las unidades son visibles. No se añade contexto para la IA.
+    }
+
+    region v1-hero (
+        name: V1 · Columnas comprensibles
+        type: staticContent
+        source {
+            htmlCode: <p>Etapa 2 de 5. Cambiamos códigos técnicos por etiquetas que una persona reconoce.</p>
+        }
+        layout {
+            sequence: 10
+            slot: breadcrumbBar
+        }
+        appearance {
+            template: @/hero
+            templateOptions: #DEFAULT#
+            icon: fa-columns
+        }
+    )
+
+    region v1-report (
+        name: V1 · Columnas comprensibles
+        type: interactiveReport
+        source {
+            location: localDatabase
+            type: sqlQuery
+            sqlQuery:
+                ```sql
+                select l.game_id
+                     , l.title
+                     , l.edition_ruleset
+                     , l.cultural_scope
+                     , l.game_type_code
+                     , l.play_mode_code
+                     , l.min_players
+                     , l.max_players
+                     , l.reference_duration_min
+                     , l.complexity_code
+                     , l.language_dep_code
+                     , l.play_count
+                     , l.avg_duration_min
+                  from nl2ir_v_library l
+                 order by l.title
+                ```
+        }
+        layout {
+            sequence: 20
+            slot: body
+        }
+        appearance {
+            template: @/interactive-report
+            templateOptions: #DEFAULT#
+        }
+        componentAppearance {
+            showNullValuesAs: -
+        }
+        pagination {
+            type: rowRangesXToY
+        }
+        performance {
+            maxRowsToProcess: 1000
+        }
+        messages {
+            whenNoDataFound: No hay juegos que coincidan con la configuración actual del informe.
+            whenMoreDataFound: Hay más de #MAX_ROW_COUNT# filas. Aplica algún filtro para acotar el resultado.
+        }
+        genAI {
+            naturalLanguageSupport: true
+        }
+        download {
+            formats: csv
+        }
+        advanced {
+            savedReportMappingIdentifier: 29276997408367539
+        }
+
+        column AVG_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: Duración media en minutos
+                alignment: end
+            }
+            layout {
+                sequence: 130
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: M
+            }
+        )
+
+        column COMPLEXITY_CODE (
+            type: plainText
+            heading {
+                heading: Complejidad
+            }
+            layout {
+                sequence: 100
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: J
+            }
+        )
+
+        column CULTURAL_SCOPE (
+            type: plainText
+            heading {
+                heading: Ámbito
+            }
+            layout {
+                sequence: 40
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: D
+            }
+        )
+
+        column EDITION_RULESET (
+            type: plainText
+            heading {
+                heading: Edición o reglas
+            }
+            layout {
+                sequence: 30
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: C
+            }
+        )
+
+        column GAME_ID (
+            type: hidden
+            heading {
+                heading: ID
+            }
+            layout {
+                sequence: 10
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: A
+            }
+        )
+
+        column GAME_TYPE_CODE (
+            type: plainText
+            heading {
+                heading: Tipo de juego
+            }
+            layout {
+                sequence: 50
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: E
+            }
+        )
+
+        column LANGUAGE_DEP_CODE (
+            type: plainText
+            heading {
+                heading: Dependencia del idioma
+            }
+            layout {
+                sequence: 110
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: K
+            }
+        )
+
+        column MAX_PLAYERS (
+            type: plainText
+            heading {
+                heading: Máximo de jugadores
+                alignment: end
+            }
+            layout {
+                sequence: 80
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: H
+            }
+        )
+
+        column MIN_PLAYERS (
+            type: plainText
+            heading {
+                heading: Mínimo de jugadores
+                alignment: end
+            }
+            layout {
+                sequence: 70
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: G
+            }
+        )
+
+        column PLAY_COUNT (
+            type: plainText
+            heading {
+                heading: Partidas completadas
+                alignment: end
+            }
+            layout {
+                sequence: 120
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: L
+            }
+        )
+
+        column PLAY_MODE_CODE (
+            type: plainText
+            heading {
+                heading: Modo de juego
+            }
+            layout {
+                sequence: 60
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: F
+            }
+        )
+
+        column REFERENCE_DURATION_MIN (
+            type: plainText
+            heading {
+                heading: Duración de referencia en minutos
+                alignment: end
+            }
+            layout {
+                sequence: 90
+                columnAlignment: end
+            }
+            source {
+                dataType: NUMBER
+            }
+            advanced {
+                endUserAlias: I
+            }
+        )
+
+        column TITLE (
+            type: plainText
+            heading {
+                heading: Juego
+            }
+            layout {
+                sequence: 20
+            }
+            source {
+                dataType: STRING
+            }
+            advanced {
+                endUserAlias: B
+            }
+        )
+
+        savedReport primary (
+            visibility: primaryDefault
+            view {
+                rowsPerPage: 50
+            }
+
+            displayColumn AVG_DURATION_MIN (
+                sequence: 13
+            )
+
+            displayColumn COMPLEXITY_CODE (
+                sequence: 10
+            )
+
+            displayColumn CULTURAL_SCOPE (
+                sequence: 4
+            )
+
+            displayColumn EDITION_RULESET (
+                sequence: 3
+            )
+
+            displayColumn GAME_ID (
+                sequence: 1
+            )
+
+            displayColumn GAME_TYPE_CODE (
+                sequence: 5
+            )
+
+            displayColumn LANGUAGE_DEP_CODE (
+                sequence: 11
+            )
+
+            displayColumn MAX_PLAYERS (
+                sequence: 8
+            )
+
+            displayColumn MIN_PLAYERS (
+                sequence: 7
+            )
+
+            displayColumn PLAY_COUNT (
+                sequence: 12
+            )
+
+            displayColumn PLAY_MODE_CODE (
+                sequence: 6
+            )
+
+            displayColumn REFERENCE_DURATION_MIN (
+                sequence: 9
+            )
+
+            displayColumn TITLE (
+                sequence: 2
+            )
+
+        )
+
+    )
+
+    button go-to-version-0 (
+        buttonName: GO_TO_VERSION_0
+        label: Versión 0
+        layout {
+            sequence: 10
+            region: @v1-hero
+            slot: next
+        }
+        appearance {
+            buttonTemplate: @/icon
+            templateOptions: #DEFAULT#
+            icon: fa-angle-left
+        }
+        behavior {
+            action: redirectThisApp
+            target: {
+                page: 3
+            }
+        }
+    )
+
+    button go-to-version-2 (
+        buttonName: GO_TO_VERSION_2
+        label: Versión 2
+        layout {
+            sequence: 20
+            region: @v1-hero
+            slot: next
+        }
+        appearance {
+            buttonTemplate: @/icon
+            templateOptions: #DEFAULT#
+            icon: fa-angle-right
+        }
+        behavior {
+            action: redirectThisApp
+            target: {
+                page: 5
+            }
+        }
+    )
+
+)
