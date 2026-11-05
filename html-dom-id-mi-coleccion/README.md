@@ -1,138 +1,105 @@
-# HTML DOM ID: primeros ajustes de Mi colección
+# HTML DOM ID en APEX: Mi colección
 
-Material del artículo en preparación **HTML DOM ID en APEX: el Static ID que ya no era el que buscaba**.
-Continúa [la selección múltiple](../seleccion-multiple-interactive-report/): la aplicación
-incluye V0–V4 de NL2IR, Preparar propuesta y una nueva página 20, **Mi colección**.
+Ejemplo del artículo en preparación **HTML DOM ID en APEX: el Static ID que ya no era el que buscaba**.
+El enlace a Hashnode se añadirá al publicar.
 
-El ejercicio asigna HTML DOM ID a una bienvenida y al contenedor del Interactive Report,
-y aplica CSS propio sin sustituir sus controles. Conserva el modelo sintético del ejemplo:
-no incorpora aún catálogo externo, estanterías por persona ni registro de partidas.
+Continúa [la selección múltiple](../seleccion-multiple-interactive-report/): añade la página
+**20 · Mi colección** a la misma app, conservando V0–V4 y Preparar propuesta. Incluye una
+bienvenida, el informe de V4 y los ajustes HTML/CSS del ejemplo.
 
-## Estado de validación
-
-La página 20 está guardada en la app 111 local. Se han verificado propiedades, HTML/CSS,
-consulta y conservación de las páginas anteriores; las capturas incluidas son de Builder.
-Se ha comprobado la ejecución a 1920 × 1080: IDs únicos, CSS calculado, filtro nativo de
-Carcassonne y recuperación de los 28 juegos tras quitarlo y recargar. Quedan pendientes
-el antes sin CSS, NL2IR, paginación y la revisión completa de accesibilidad y otros tamaños.
+La aplicación se ofrece en [SQL único](application/sql/f111.sql) y en
+[APEXlang](application/apexlang/a-que-jugamos/). Son dos formatos del mismo resultado: importa
+**uno**. Los objetos de base de datos se preparan aparte según la ruta elegida.
 
 ## Requisitos
 
-- Oracle APEX 26.1 y Universal Theme 26.1; el laboratorio utiliza el estilo Iris.
-- Un workspace y esquema de laboratorio. Los datos de ejemplo son sintéticos.
-- SQLcl 26.1 si se elige APEXlang; el SQL único también se importa desde App Builder.
-- Un usuario APEX para entrar en la aplicación. No se incluyen usuarios ni contraseñas.
-- Servicio IA propio sólo si se quiere probar NL2IR; los ajustes CSS y el informe funcionan
-  sin hacer peticiones IA. La nueva región conserva la configuración NL2IR de V4.
+- Oracle APEX 26.1 y Universal Theme 26.1; el ejemplo utiliza Iris.
+- Un workspace, un esquema de parsing y un usuario para acceder a la aplicación.
+- SQLcl 26.1 con soporte APEXlang y esquema REST habilitado si eliges ese formato.
+- Un servicio IA propio sólo para usar NL2IR. El montaje HTML/CSS y la búsqueda de texto del
+  informe no necesitan llamadas a un proveedor de IA.
 
-## Instalar el ejemplo completo
+Los datos son sintéticos. No se incluyen usuarios, contraseñas ni claves.
 
-1. Si empiezas desde cero, ejecuta [database/install.sql](database/install.sql), conectado al
-   esquema de parsing. Instala los objetos de los ejercicios anteriores y carga los 28 juegos
-   y las 32 partidas iniciales. No contiene un borrado del esquema.
-2. Si ya tienes el ejemplo de selección múltiple en el mismo esquema, conserva sus objetos
-   y datos: este artículo no añade DDL ni necesita volver a cargar el dataset. Ejecuta
-   [database/verify.sql](database/verify.sql) para comprobar las tablas, vista y API requeridas.
-3. Importa **una** de las dos representaciones de la aplicación. Para una instalación nueva,
-   usa un ID libre generado por APEX; el ID de origen 111 no es una reserva para tu instancia.
-   Un ID puede existir en otro workspace aunque no lo veas en el listado del tuyo.
-   Para continuar una app existente, sigue primero la ruta incremental de abajo.
-4. Abre **Mi colección** desde el menú lateral. La página es la 20 cualquiera
-   que sea el ID elegido para la app.
+## Ruta A: instalar desde cero
 
-### Alternativa A: SQL único
+1. Ejecuta [database/install.sql](database/install.sql) en el esquema de parsing. Incluye
+   los objetos de los ejercicios anteriores, los 28 juegos y las 32 partidas iniciales.
+2. Importa una de las versiones de la aplicación siguiendo las instrucciones de abajo.
+   Elige un ID libre; el ID de origen es 111.
+3. Si vas a usar NL2IR, asigna tu propio servicio y credencial en el workspace.
+4. Abre **Mi colección** desde el menú lateral y realiza las comprobaciones finales.
 
-En App Builder → Import selecciona [application/sql/f111.sql](application/sql/f111.sql).
-Elige workspace, esquema de parsing y el ID apropiado para tu ruta de instalación. El SQL es la exportación
-de la aplicación; los objetos se instalan aparte en el paso 1 cuando hagan falta.
+## Ruta B: ampliar tu aplicación existente
 
-### Alternativa B: APEXlang
+1. Usa la app del ejemplo de selección múltiple y el mismo esquema de parsing. Guarda una
+   exportación de respaldo. En nuestro entorno seguimos trabajando sobre la app **111**.
+2. Ejecuta [database/verify.sql](database/verify.sql). Comprueba las tablas, la vista y el
+   paquete existentes sin modificar datos. Este incremento no requiere DDL ni recargar juegos.
+3. Para conservar tus cambios propios, sigue el montaje de Builder que aparece abajo.
+   También puedes importar la aplicación completa sobre el mismo ID: sustituirá toda su
+   definición por la versión de esta carpeta, incluidos los cambios que tengas en Builder.
+4. Abre la página 20 y comprueba también los recorridos anteriores.
+
+## Importar la aplicación
+
+### SQL único
+
+En **App Builder → Import**, selecciona [application/sql/f111.sql](application/sql/f111.sql).
+Indica workspace, esquema de parsing e ID de aplicación. Para la ruta A, usa un ID nuevo;
+para sustituir la versión anterior en la ruta B, selecciona su ID tras guardar el respaldo.
+Revisa el resumen antes de instalar. La importación no instala los objetos de base de datos.
+
+### APEXlang
 
 Desde esta carpeta, con SQLcl conectado al esquema de parsing:
 
 ```text
 apex validate -input application/apexlang/a-que-jugamos -workspace TU_WORKSPACE
-apex import -input application/apexlang/a-que-jugamos -workspace TU_WORKSPACE -schema TU_ESQUEMA -id ID_LIBRE -alias A-QUE-JUGAMOS
+apex import -input application/apexlang/a-que-jugamos -workspace TU_WORKSPACE -schema TU_ESQUEMA -id ID_DESTINO -alias A-QUE-JUGAMOS
 ```
 
-En una instalación nueva, elige otro alias si ya existe. No importes ambas alternativas sobre IDs distintos por error:
-son dos formatos de la misma app. La exportación no instala los objetos automáticamente.
+Elige el ID según la ruta A o B y otro alias si ya está ocupado por una aplicación distinta.
+La definición referencia el servicio open-ai y una credencial sin secreto; enlaza los de tu
+entorno antes de usar NL2IR. Consulta [NOTICE.md](NOTICE.md) sobre la preparación del export
+y la regeneración de bookmarks tras importar.
 
-La configuración IA referencia un servicio y credencial sin secreto. En otro workspace,
-asigna tu propio servicio/credencial antes de usar NL2IR. Para compartir tu instalación,
-regenera su salt desde Shared Components → Security Attributes → Expire Bookmarks: la copia
-pública neutraliza ese valor. No añadas claves al repositorio.
+## Construir la página en Builder
 
-## Continuar la misma aplicación
+1. Dentro de la app existente: **Create Page → Create Page as Copy → Page in this application**.
+   Copia la página **7 · V4 · Columnas derivadas** a una página libre, aquí la 20. Nombre:
+   **Mi colección**; alias: MI-COLECCION. Crea una entrada de menú sin padre con ese nombre.
+2. En la página nueva retira los botones GO_TO_VERSION_3 y GO_TO_CHECKBOX. Conserva las
+   páginas originales y la consulta, columnas, formatos y configuración NL2IR del informe.
+3. Reutiliza la región Static Content copiada de V4: nombre **Bienvenida a mi colección**,
+   Slot **Body**, secuencia 10 y plantilla **Blank with Attributes**.
+4. Pega [snippets/intro.html](snippets/intro.html). En **Advanced → HTML DOM ID**, escribe
+   collection_intro, sin #. Conserva su Static ID; no repitas el ID en el HTML interior.
+5. Renombra la región de informe a **Mi colección**, secuencia 20. Mantén la plantilla
+   **Interactive Report** y asigna my_collection en **HTML DOM ID**.
+6. Guarda y ejecuta para comprobar el punto de partida. Después pega
+   [snippets/page.css](snippets/page.css) en **Page → CSS → Inline**, guarda y ejecuta de nuevo.
+7. Si no creaste la entrada de menú en el asistente, añádela apuntando a la nueva página.
 
-El proyecto mantiene una única app, la **111**: cada artículo añade páginas y patrones sobre
-ella. Si ya tienes la versión de selección múltiple, exporta un respaldo y sigue el montaje
-manual de abajo dentro de esa misma app. No vuelvas a ejecutar install.sql.
+## Qué comprobar
 
-También puedes importar el snapshot completo sobre **el mismo ID** después del respaldo,
-si aceptas sustituir toda su definición por la versión de esta carpeta. Eso conserva las
-páginas publicadas en este ejemplo, pero no incorpora tus cambios adicionales de Builder:
-si los tienes, utiliza el montaje manual. La importación no borra tablas ni crea otra estantería.
+- La bienvenida muestra el contenido propio con espacio y línea lateral; el informe tiene
+  separación y borde superior. Ajusta el color si lo necesita el estilo de tu tema.
+- Hay un único elemento con ID collection_intro y otro con ID my_collection en el DOM.
+- Buscar Carcassonne con el filtro de texto devuelve una fila; quitarlo y recargar recupera
+  los 28 juegos del dataset inicial. Con datos propios, el recuento puede ser diferente.
+- Los controles, paginación, foco, encabezados y presentación a distintas anchuras se conservan.
+  Si configuraste IA, repite una pregunta del ejemplo V4 para comprobar NL2IR.
 
-## Recrear el ejercicio paso a paso en Builder
-
-La aplicación descargable ya contiene el resultado. Para seguir el antes/después, añade
-la página dentro de tu app existente, con respaldo previo, y sigue este orden:
-
-1. En App Builder → Create Page → Create Page as Copy, elige Page in this application.
-   Copia la página 7 **V4 · Columnas derivadas** a una página libre, por ejemplo 20. Llámala
-   **Mi colección**, con alias MI-COLECCION. Conserva el IR, su consulta, columnas, metadatos,
-   formatos y configuración de lenguaje natural.
-2. Retira sólo de la página copiada los dos botones de navegación entre versiones.
-   Conserva las páginas originales. La nueva página no es una sexta variante NL2IR.
-3. Reutiliza la región **Static Content** copiada de V4: nombre **Bienvenida a mi colección**,
-   Slot **Body**, secuencia 10. Cambia Hero por **Blank with Attributes**, que deja el encabezado
-   al HTML propio. Si la renombraste en el asistente, no crees otra región igual.
-4. En Advanced → HTML DOM ID escribe collection_intro, sin #. Conserva el Static ID que
-   identifica al componente. Pega [snippets/intro.html](snippets/intro.html) como HTML.
-5. Renombra la región IR a **Mi colección**, secuencia 20, y asigna my_collection en su
-   HTML DOM ID. Conserva su plantilla **Interactive Report** y sus controles nativos.
-6. Guarda y ejecuta antes de añadir CSS. Comprueba el título, el informe y la búsqueda.
-7. En la página, CSS → Inline, añade [snippets/page.css](snippets/page.css). Guarda y ejecuta.
-   La bienvenida obtiene espacio y línea lateral; el informe, separación y borde superior.
-8. En el inspector del navegador comprueba un único elemento con id collection_intro y otro
-   con id my_collection. El div interior usa clases: no repitas el ID de la región en su HTML.
-9. Si no se creó al copiar la página, añade la entrada a la página 20 al menú lateral. Prueba filtros, paginación,
-   refresh nativo, teclado y un ancho estrecho. Si la copia conserva IA, repite una pregunta V4.
-
-El color azul es una decisión del ejemplo. Revisa su convivencia con el tema instalado.
-Para reutilizar un acabado entre regiones, utiliza una clase propia en CSS Classes;
-Static ID y HTML DOM ID tienen responsabilidades distintas en 26.1.
-
-## Capturas de configuración
-
-![IDs del informe en la página 20](evidence/02-informe-html-dom-id.jpg)
-
-![IDs de la bienvenida](evidence/01-bienvenida-html-dom-id.jpg)
-
-![CSS Inline de la página](evidence/03-css-inline.jpg)
-
-El Static ID heredado de V4 se conserva; HTML DOM ID proporciona el destino CSS nuevo.
-Las imágenes muestran configuración real, no un antes/después de la pantalla en ejecución.
-
-## Qué contiene esta entrega
+## Archivos
 
 | Ruta | Contenido |
 | --- | --- |
-| application/sql/f111.sql | Aplicación completa, formato SQL único. |
+| database/install.sql | Objetos y datos completos para instalar desde cero. |
+| database/verify.sql | Comprobaciones del esquema existente, sin modificar datos. |
+| application/sql/f111.sql | Aplicación completa en SQL único. |
 | application/apexlang/a-que-jugamos/ | La misma aplicación en APEXlang. |
-| database/install.sql | Objetos y dataset completo del ejemplo anterior, sin cambios de dominio. |
-| database/verify.sql | Comprobaciones de objetos y recuentos; no modifica datos. |
-| snippets/ | HTML y CSS exactos utilizados por la página 20. |
-| evidence/ | Capturas y resultado de las comprobaciones del laboratorio. |
+| snippets/intro.html | HTML de la bienvenida. |
+| snippets/page.css | CSS Inline de la página. |
 
-La ampliación se ha construido y guardado desde Builder en la app 111. Al preparar el formato APEXlang público se elimina de la página nueva la
-navegación entre etapas; en el archivo de página 8, el alias de exportación del Row Selector
-pasa de A a P para evitar una colisión con GAME_ID que detectó el compilador. La definición de página 8 en la app local se conserva intacta. El alias de exportación no cambia la clave seleccionada ni su validación servidor.
-
-Consulta la [licencia MIT](../LICENSE) del repositorio. Estado editorial: en preparación;
-ni el artículo ni esta rama implican publicación o fusión aprobadas.
-
-![Mi colección en escritorio, 1920 × 1080](evidence/04-mi-coleccion-escritorio.jpg)
-
-![Filtro nativo Carcassonne](evidence/05-filtro-carcassonne.jpg)
+Consulta la [licencia MIT](../LICENSE) del repositorio.
