@@ -5,7 +5,7 @@ El enlace a Hashnode se añadirá al publicar.
 
 Continúa [la selección múltiple](../seleccion-multiple-interactive-report/): añade la página
 **20 · Mi colección** a la misma app, conservando V0–V4 y Preparar propuesta. Incluye una
-bienvenida, el informe de V4 y los ajustes HTML/CSS del ejemplo.
+bienvenida cálida con ilustración propia, el informe de V4 y los ajustes HTML/CSS del ejemplo.
 
 La aplicación se ofrece en [SQL único](application/sql/f111.sql) y en
 [APEXlang](application/apexlang/a-que-jugamos/). Son dos formatos del mismo resultado: importa
@@ -73,7 +73,7 @@ y la regeneración de bookmarks tras importar.
    páginas originales y la consulta, columnas, formatos y configuración NL2IR del informe.
 3. Reutiliza la región Static Content copiada de V4: nombre **Bienvenida a mi colección**,
    Slot **Body**, secuencia 10 y plantilla **Blank with Attributes**.
-4. Pega [snippets/intro.html](snippets/intro.html). En **Advanced → HTML DOM ID**, escribe
+4. Pega [snippets/intro.html](snippets/intro.html), que incluye el SVG decorativo propio. En **Advanced → HTML DOM ID**, escribe
    collection_intro, sin #. Conserva su Static ID; no repitas el ID en el HTML interior.
 5. Renombra la región de informe a **Mi colección**, secuencia 20. Mantén la plantilla
    **Interactive Report** y asigna my_collection en **HTML DOM ID**.
@@ -83,12 +83,13 @@ y la regeneración de bookmarks tras importar.
 
 ## Qué comprobar
 
-- La bienvenida muestra el contenido propio con espacio y línea lateral; el informe tiene
-  separación y borde superior. Ajusta el color si lo necesita el estilo de tu tema.
+- La bienvenida muestra una superficie marfil, texto verde petróleo y una ilustración
+  decorativa de juegos. El informe queda separado por espacio, conservando su estilo nativo.
 - Hay un único elemento con ID collection_intro y otro con ID my_collection en el DOM.
 - Buscar Carcassonne con el filtro de texto devuelve una fila; quitarlo y recargar recupera
   los 28 juegos del dataset inicial. Con datos propios, el recuento puede ser diferente.
-- Los controles, paginación, foco, encabezados y presentación a distintas anchuras se conservan.
+- Comprueba controles, paginación, foco, encabezados y presentación a distintas anchuras.
+  Por debajo de 640 px se oculta la ilustración y permanece el texto de bienvenida.
   Si configuraste IA, repite una pregunta del ejemplo V4 para comprobar NL2IR.
 
 ## Archivos

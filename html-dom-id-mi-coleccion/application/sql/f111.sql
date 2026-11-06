@@ -33,7 +33,7 @@ prompt APPLICATION 111 - ¿A qué jugamos?
 -- Application Export:
 --   Application:     111
 --   Name:            ¿A qué jugamos?
---   Date and Time:   22:21 Thursday November 5, 2026
+--   Date and Time:   14:43 Friday November 6, 2026
 --   Exported By:     DEV_BLOG
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -108,7 +108,7 @@ wwv_imp_workspace.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_file_prefix=>nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>2461302155938
-,p_version_scn=>'32177170'
+,p_version_scn=>'32223761'
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -3677,22 +3677,67 @@ wwv_flow_imp_page.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_group_id=>wwv_flow_imp.id(29274759635367457)
 ,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'/* Own region content, scoped by the region''s HTML DOM ID. */',
+'/* A single region: use its HTML DOM ID, not its component Static ID. */',
+'#collection_intro {',
+'    background: #f5f0e7;',
+'    color: #183d38;',
+'    border: 1px solid #e5ded1;',
+'    border-radius: 1rem;',
+'    overflow: hidden;',
+'}',
+'',
+'/* Own content classes, scoped to this region. */',
 '#collection_intro .collection-hero {',
-'    padding: 1.5rem;',
-'    border-inline-start: 0.25rem solid #2563eb;',
+'    display: flex;',
+'    align-items: center;',
+'    justify-content: space-between;',
+'    gap: 2rem;',
+'    padding: 1.75rem 2rem;',
+'}',
+'',
+'#collection_intro .collection-copy {',
+'    min-width: 0;',
 '}',
 '',
 '#collection_intro .collection-eyebrow {',
-'    margin-block: 0 0.5rem;',
+'    margin: 0 0 .6rem;',
+'    color: #426b60;',
+'    font-size: .8rem;',
 '    font-weight: 600;',
+'    letter-spacing: .1em;',
+'    text-transform: uppercase;',
 '}',
 '',
-'/* Style the collection container, preserving its native report controls. */',
+'#collection_intro h2 {',
+'    margin: 0;',
+'    color: inherit;',
+'    font-size: clamp(1.6rem, 2.5vw, 2.25rem);',
+'    font-weight: 600;',
+'    line-height: 1.2;',
+'    letter-spacing: -.025em;',
+'}',
+'',
+'#collection_intro .collection-description {',
+'    margin: .75rem 0 0;',
+'    color: #426057;',
+'    max-width: 48ch;',
+'}',
+'',
+'#collection_intro .collection-art {',
+'    width: 260px;',
+'    max-width: 35%;',
+'    flex-shrink: 0;',
+'    display: block;',
+'}',
+'',
+'/* Keep the report''s own toolbar, columns and controls. */',
 '#my_collection {',
-'    margin-block-start: 1.5rem;',
-'    padding-block-start: 1rem;',
-'    border-block-start: 2px solid #2563eb;',
+'    margin-block-start: 1.25rem;',
+'}',
+'',
+'@media (max-width: 640px) {',
+'    #collection_intro .collection-hero { padding: 1.5rem; }',
+'    #collection_intro .collection-art { display: none; }',
 '}',
 ''))
 ,p_step_template=>4073832297226169690
@@ -3714,9 +3759,34 @@ wwv_flow_imp_page.create_page_plug(
 ,p_location=>null
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<div class="collection-hero">',
-unistr('    <p class="collection-eyebrow">Mi colecci\00F3n</p>'),
-unistr('    <h2>La pr\00F3xima partida empieza aqu\00ED</h2>'),
-unistr('    <p>Explora tus juegos y encuentra una opci\00F3n para la pr\00F3xima tarde.</p>'),
+'    <div class="collection-copy">',
+unistr('        <p class="collection-eyebrow">Mi colecci\00F3n</p>'),
+unistr('        <h2>Tu pr\00F3xima partida, a mano.</h2>'),
+unistr('        <p class="collection-description">Explora tus juegos y encuentra qu\00E9 sacar a la mesa.</p>'),
+'    </div>',
+'    <svg class="collection-art" viewBox="0 0 300 160" aria-hidden="true" focusable="false">',
+'        <ellipse cx="160" cy="142" rx="112" ry="9" fill="#173f39" opacity=".08"/>',
+'        <g transform="translate(104 18) rotate(12 60 60)">',
+'            <rect width="112" height="112" rx="22" fill="#d8e3d7"/>',
+'            <path d="M20 35H92M20 57H92M20 79H92M35 20V92M57 20V92M79 20V92" stroke="#91b0a0" stroke-width="2"/>',
+'        </g>',
+'        <g transform="translate(48 65) rotate(-12 38 38)">',
+'            <rect width="76" height="76" rx="17" fill="#fffdf7" stroke="#d8d2c5"/>',
+'            <g fill="#285a50">',
+'                <circle cx="23" cy="23" r="5"/><circle cx="53" cy="23" r="5"/>',
+'                <circle cx="38" cy="38" r="5"/>',
+'                <circle cx="23" cy="53" r="5"/><circle cx="53" cy="53" r="5"/>',
+'            </g>',
+'        </g>',
+'        <g fill="#285a50">',
+'            <circle cx="236" cy="91" r="12"/>',
+'            <path d="M224 106Q236 98 248 106L255 137H217Z"/>',
+'        </g>',
+'        <ellipse cx="180" cy="131" rx="19" ry="8" fill="#b98342"/>',
+'        <ellipse cx="180" cy="124" rx="19" ry="8" fill="#ddb578"/>',
+'        <circle cx="59" cy="35" r="5" fill="#b98342"/>',
+'        <path d="M250 38v12m-6-6h12" stroke="#91b0a0" stroke-width="3" stroke-linecap="round"/>',
+'    </svg>',
 '</div>',
 ''))
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
