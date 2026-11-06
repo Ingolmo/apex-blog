@@ -33,14 +33,14 @@ prompt APPLICATION 111 - ¿A qué jugamos?
 -- Application Export:
 --   Application:     111
 --   Name:            ¿A qué jugamos?
---   Date and Time:   14:43 Friday November 6, 2026
+--   Date and Time:   15:28 Friday November 6, 2026
 --   Exported By:     DEV_BLOG
 --   Flashback:       0
 --   Export Type:     Application Export
---     Pages:                     11
+--     Pages:                     10
 --       Items:                    4
 --       Processes:                5
---       Regions:                 20
+--       Regions:                 18
 --       Buttons:                 12
 --       Dynamic Actions:          1
 --     Shared Components:
@@ -108,7 +108,7 @@ wwv_imp_workspace.create_flow(
 ,p_csv_encoding=>'Y'
 ,p_file_prefix=>nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>2461302155938
-,p_version_scn=>'32223761'
+,p_version_scn=>'32251473'
 ,p_print_server_type=>'NATIVE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -348,7 +348,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(29266808153366698)
 ,p_name=>'Navigation Menu'
 ,p_static_id=>'navigation-menu'
-,p_version_scn=>'SH256:T-GcVUhrT5Jh80rwhI7Coavg7tqaLcjGsN39uCB1XZI'
+,p_version_scn=>'SH256:wcFqwBlaEVz91EFXwtkC1I_2rKkgIBZ5GkeJJ5ynV3U'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(31296774127313950)
@@ -367,15 +367,6 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_link_target=>'f?p=&APP_ID.:1:&SESSION.::&DEBUG.'
 ,p_list_item_icon=>'fa-home'
 ,p_list_item_current_type=>'TARGET_PAGE'
-);
-wwv_flow_imp_shared.create_list_item(
- p_id=>wwv_flow_imp.id(40095231385157117)
-,p_list_item_display_sequence=>90
-,p_list_item_link_text=>unistr('Mi colecci\00F3n')
-,p_static_id=>unistr('mi-colecci\00F3n')
-,p_list_item_link_target=>'f?p=&APP_ID.:20:&APP_SESSION.::&DEBUG.:::'
-,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'20'
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(31296860539313950)
@@ -1667,6 +1658,68 @@ wwv_flow_imp_page.create_page(
 ,p_alias=>'HOME'
 ,p_step_title=>unistr('\00BFA qu\00E9 jugamos?')
 ,p_autocomplete_on_off=>'OFF'
+,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'/* A single region: use its HTML DOM ID, not its component Static ID. */',
+'#collection_intro {',
+'    background: linear-gradient(110deg, var(--ut-region-background-color), var(--ut-palette-primary-shade));',
+'    color: var(--ut-body-text-color);',
+'    border: 0;',
+'    border-radius: .75rem;',
+'    box-shadow: 0 8px 28px rgb(0 0 0 / 5%);',
+'    overflow: hidden;',
+'    margin-block-end: 1.5rem;',
+'}',
+'',
+'/* Own content classes, scoped to this region. */',
+'#collection_intro .collection-hero {',
+'    display: flex;',
+'    align-items: center;',
+'    justify-content: space-between;',
+'    gap: 2rem;',
+'    padding: 1.75rem 2rem;',
+'}',
+'',
+'#collection_intro .collection-copy {',
+'    min-width: 0;',
+'}',
+'',
+'#collection_intro .collection-eyebrow {',
+'    margin: 0 0 .6rem;',
+'    color: var(--ut-palette-primary);',
+'    font-size: .8rem;',
+'    font-weight: 600;',
+'    letter-spacing: .1em;',
+'    text-transform: uppercase;',
+'}',
+'',
+'#collection_intro h1 {',
+'    margin: 0;',
+'    color: inherit;',
+'    font-size: clamp(1.6rem, 2.5vw, 2.25rem);',
+'    font-weight: 600;',
+'    line-height: 1.2;',
+'    letter-spacing: -.025em;',
+'}',
+'',
+'#collection_intro .collection-description {',
+'    margin: .75rem 0 0;',
+'    color: inherit;',
+'    opacity: .75;',
+'    max-width: 48ch;',
+'}',
+'',
+'#collection_intro .collection-art {',
+'    width: 260px;',
+'    max-width: 35%;',
+'    flex-shrink: 0;',
+'    display: block;',
+'}',
+'',
+'@media (max-width: 640px) {',
+'    #collection_intro .collection-hero { padding: 1.5rem; }',
+'    #collection_intro .collection-art { display: none; }',
+'}',
+''))
 ,p_step_template=>4073832297226169690
 ,p_page_template_options=>'#DEFAULT#'
 ,p_required_role=>'MUST_NOT_BE_PUBLIC_USER'
@@ -1677,14 +1730,44 @@ wwv_flow_imp_page.create_page_plug(
  p_id=>wwv_flow_imp.id(31298054623313952)
 ,p_plug_name=>unistr('\00BFA qu\00E9 jugamos?')
 ,p_static_id=>'home-hero'
+,p_region_name=>'collection_intro'
 ,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>2675494171183407654
+,p_plug_template=>4502917002193490937
 ,p_plug_display_sequence=>10
-,p_plug_display_point=>'REGION_POSITION_01'
 ,p_plug_item_display_point=>'ABOVE'
 ,p_location=>null
-,p_plug_source=>unistr('<p>Un laboratorio peque\00F1o para explorar informes, contexto y acciones sobre una colecci\00F3n ficticia de juegos de mesa.</p>')
-,p_region_image=>'#APP_FILES#icons/app-icon-512.png'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<div class="collection-hero">',
+'    <div class="collection-copy">',
+unistr('        <p class="collection-eyebrow">\00BFA qu\00E9 jugamos?</p>'),
+unistr('        <h1>Tu pr\00F3xima partida, a mano.</h1>'),
+unistr('        <p class="collection-description">Tu colecci\00F3n, tus partidas y una buena excusa para volver a jugar.</p>'),
+'    </div>',
+'    <svg class="collection-art" viewBox="0 0 300 160" aria-hidden="true" focusable="false">',
+'        <ellipse cx="160" cy="142" rx="112" ry="9" fill="#163b49" opacity=".08"/>',
+'        <g transform="translate(104 18) rotate(12 60 60)">',
+'            <rect width="112" height="112" rx="22" fill="#dbeaf0"/>',
+'            <path d="M20 35H92M20 57H92M20 79H92M35 20V92M57 20V92M79 20V92" stroke="#92b6c5" stroke-width="2"/>',
+'        </g>',
+'        <g transform="translate(48 65) rotate(-12 38 38)">',
+'            <rect width="76" height="76" rx="17" fill="#ffffff" stroke="#d5dde1"/>',
+'            <g fill="#00688c">',
+'                <circle cx="23" cy="23" r="5"/><circle cx="53" cy="23" r="5"/>',
+'                <circle cx="38" cy="38" r="5"/>',
+'                <circle cx="23" cy="53" r="5"/><circle cx="53" cy="53" r="5"/>',
+'            </g>',
+'        </g>',
+'        <g fill="#00688c">',
+'            <circle cx="236" cy="91" r="12"/>',
+'            <path d="M224 106Q236 98 248 106L255 137H217Z"/>',
+'        </g>',
+'        <ellipse cx="180" cy="131" rx="19" ry="8" fill="#b77c35"/>',
+'        <ellipse cx="180" cy="124" rx="19" ry="8" fill="#dfb678"/>',
+'        <circle cx="59" cy="35" r="5" fill="#b77c35"/>',
+'        <path d="M250 38v12m-6-6h12" stroke="#92b6c5" stroke-width="3" stroke-linecap="round"/>',
+'    </svg>',
+'</div>',
+''))
 ,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
   'expand_shortcuts', 'N',
   'output_as', 'HTML')).to_clob
@@ -3664,386 +3747,6 @@ wwv_flow_imp_page.create_page_process(
 ,p_process_when_button_id=>wwv_flow_imp.id(4052564017304)
 ,p_process_success_message=>unistr('Selecci\00F3n procesada. Los juegos ya presentes se han conservado sin duplicarlos.')
 ,p_internal_uid=>32244351664459902
-);
-end;
-/
-prompt --application/pages/page_00020
-begin
-wwv_flow_imp_page.create_page(
- p_id=>20
-,p_name=>unistr('Mi colecci\00F3n')
-,p_alias=>'MI-COLECCION'
-,p_step_title=>unistr('Mi colecci\00F3n')
-,p_autocomplete_on_off=>'OFF'
-,p_group_id=>wwv_flow_imp.id(29274759635367457)
-,p_inline_css=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'/* A single region: use its HTML DOM ID, not its component Static ID. */',
-'#collection_intro {',
-'    background: #f5f0e7;',
-'    color: #183d38;',
-'    border: 1px solid #e5ded1;',
-'    border-radius: 1rem;',
-'    overflow: hidden;',
-'}',
-'',
-'/* Own content classes, scoped to this region. */',
-'#collection_intro .collection-hero {',
-'    display: flex;',
-'    align-items: center;',
-'    justify-content: space-between;',
-'    gap: 2rem;',
-'    padding: 1.75rem 2rem;',
-'}',
-'',
-'#collection_intro .collection-copy {',
-'    min-width: 0;',
-'}',
-'',
-'#collection_intro .collection-eyebrow {',
-'    margin: 0 0 .6rem;',
-'    color: #426b60;',
-'    font-size: .8rem;',
-'    font-weight: 600;',
-'    letter-spacing: .1em;',
-'    text-transform: uppercase;',
-'}',
-'',
-'#collection_intro h2 {',
-'    margin: 0;',
-'    color: inherit;',
-'    font-size: clamp(1.6rem, 2.5vw, 2.25rem);',
-'    font-weight: 600;',
-'    line-height: 1.2;',
-'    letter-spacing: -.025em;',
-'}',
-'',
-'#collection_intro .collection-description {',
-'    margin: .75rem 0 0;',
-'    color: #426057;',
-'    max-width: 48ch;',
-'}',
-'',
-'#collection_intro .collection-art {',
-'    width: 260px;',
-'    max-width: 35%;',
-'    flex-shrink: 0;',
-'    display: block;',
-'}',
-'',
-'/* Keep the report''s own toolbar, columns and controls. */',
-'#my_collection {',
-'    margin-block-start: 1.25rem;',
-'}',
-'',
-'@media (max-width: 640px) {',
-'    #collection_intro .collection-hero { padding: 1.5rem; }',
-'    #collection_intro .collection-art { display: none; }',
-'}',
-''))
-,p_step_template=>4073832297226169690
-,p_page_template_options=>'#DEFAULT#'
-,p_required_role=>'MUST_NOT_BE_PUBLIC_USER'
-,p_protection_level=>'C'
-,p_help_text=>unistr('Primeros ajustes visuales de Mi colecci\00F3n mediante HTML DOM ID y CSS propio.')
-);
-wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(71402492405471081)
-,p_plug_name=>unistr('Bienvenida a mi colecci\00F3n')
-,p_static_id=>'v4-hero'
-,p_region_name=>'collection_intro'
-,p_icon_css_classes=>'fa-strategy'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>4502917002193490937
-,p_plug_display_sequence=>10
-,p_plug_item_display_point=>'ABOVE'
-,p_location=>null
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'<div class="collection-hero">',
-'    <div class="collection-copy">',
-unistr('        <p class="collection-eyebrow">Mi colecci\00F3n</p>'),
-unistr('        <h2>Tu pr\00F3xima partida, a mano.</h2>'),
-unistr('        <p class="collection-description">Explora tus juegos y encuentra qu\00E9 sacar a la mesa.</p>'),
-'    </div>',
-'    <svg class="collection-art" viewBox="0 0 300 160" aria-hidden="true" focusable="false">',
-'        <ellipse cx="160" cy="142" rx="112" ry="9" fill="#173f39" opacity=".08"/>',
-'        <g transform="translate(104 18) rotate(12 60 60)">',
-'            <rect width="112" height="112" rx="22" fill="#d8e3d7"/>',
-'            <path d="M20 35H92M20 57H92M20 79H92M35 20V92M57 20V92M79 20V92" stroke="#91b0a0" stroke-width="2"/>',
-'        </g>',
-'        <g transform="translate(48 65) rotate(-12 38 38)">',
-'            <rect width="76" height="76" rx="17" fill="#fffdf7" stroke="#d8d2c5"/>',
-'            <g fill="#285a50">',
-'                <circle cx="23" cy="23" r="5"/><circle cx="53" cy="23" r="5"/>',
-'                <circle cx="38" cy="38" r="5"/>',
-'                <circle cx="23" cy="53" r="5"/><circle cx="53" cy="53" r="5"/>',
-'            </g>',
-'        </g>',
-'        <g fill="#285a50">',
-'            <circle cx="236" cy="91" r="12"/>',
-'            <path d="M224 106Q236 98 248 106L255 137H217Z"/>',
-'        </g>',
-'        <ellipse cx="180" cy="131" rx="19" ry="8" fill="#b98342"/>',
-'        <ellipse cx="180" cy="124" rx="19" ry="8" fill="#ddb578"/>',
-'        <circle cx="59" cy="35" r="5" fill="#b98342"/>',
-'        <path d="M250 38v12m-6-6h12" stroke="#91b0a0" stroke-width="3" stroke-linecap="round"/>',
-'    </svg>',
-'</div>',
-''))
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'expand_shortcuts', 'N',
-  'output_as', 'HTML')).to_clob
-);
-wwv_flow_imp_page.create_page_plug(
- p_id=>wwv_flow_imp.id(71400670148471070)
-,p_plug_name=>unistr('Mi colecci\00F3n')
-,p_static_id=>'v4-report'
-,p_region_name=>'my_collection'
-,p_region_template_options=>'#DEFAULT#'
-,p_plug_template=>2102002977963900996
-,p_plug_display_sequence=>20
-,p_plug_item_display_point=>'ABOVE'
-,p_query_type=>'SQL'
-,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'select l.game_id',
-'     , l.title',
-'     , l.edition_ruleset',
-'     , l.cultural_scope',
-'     , l.game_type_code',
-'     , l.play_mode_code',
-'     , l.min_players',
-'     , l.max_players',
-'     , l.reference_duration_min',
-'     , l.complexity_code',
-'     , l.language_dep_code',
-'     , l.play_count',
-'     , l.avg_duration_min',
-'     , l.duration_drift_min',
-'     , l.played_yn',
-'  from nl2ir_v_library l',
-' order by l.title'))
-,p_plug_source_type=>'NATIVE_IR'
-,p_ai_enabled=>true
-);
-wwv_flow_imp_page.create_worksheet(
- p_id=>wwv_flow_imp.id(71400805531471070)
-,p_max_row_count=>'1000'
-,p_max_row_count_message=>unistr('Hay m\00E1s de #MAX_ROW_COUNT# filas. Aplica alg\00FAn filtro para acotar el resultado.')
-,p_no_data_found_message=>unistr('No hay juegos que coincidan con la configuraci\00F3n actual del informe.')
-,p_show_nulls_as=>'-'
-,p_pagination_type=>'ROWS_X_TO_Y'
-,p_pagination_display_pos=>'BOTTOM_RIGHT'
-,p_report_list_mode=>'TABS'
-,p_lazy_loading=>false
-,p_show_detail_link=>'N'
-,p_show_notify=>'Y'
-,p_download_formats=>'CSV'
-,p_enable_mail_download=>'Y'
-,p_internal_uid=>71400805531471070
-,p_ai_report_hint=>unistr('Cada fila representa un juego de una colecci\00F3n personal. Las partidas registradas son sint\00E9ticas y s\00F3lo se utilizan para este laboratorio. No hay valoraciones, precios ni datos externos.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71400933356471070)
-,p_db_column_name=>'AVG_DURATION_MIN'
-,p_display_order=>130
-,p_column_identifier=>'M'
-,p_column_label=>unistr('Duraci\00F3n media en minutos')
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Media de duraci\00F3n de las partidas completadas, expresada en minutos. Puede estar vac\00EDa si no hay partidas.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71400969341471070)
-,p_db_column_name=>'COMPLEXITY_CODE'
-,p_display_order=>100
-,p_column_identifier=>'J'
-,p_column_label=>'Complejidad'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>'Nivel aproximado de dificultad. Usa LIGHT para ligero o sencillo, MEDIUM para medio o intermedio y HEAVY para complejo o exigente.'
-,p_ai_lov_type=>'SHARED'
-,p_ai_lov_id=>wwv_flow_imp.id(29321269276818881)
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401092562471070)
-,p_db_column_name=>'CULTURAL_SCOPE'
-,p_display_order=>40
-,p_column_identifier=>'D'
-,p_column_label=>unistr('\00C1mbito')
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('\00C1mbito cultural con el que se asocia el juego en este conjunto de datos; no mide popularidad.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401208674471070)
-,p_db_column_name=>'DURATION_DRIFT_MIN'
-,p_display_order=>140
-,p_column_identifier=>'N'
-,p_column_label=>unistr('Desviaci\00F3n de duraci\00F3n en minutos')
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Diferencia en minutos entre la duraci\00F3n media observada y la duraci\00F3n de referencia. Un valor positivo indica que las partidas suelen alargarse; uno negativo, que suelen terminar antes.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401316499471081)
-,p_db_column_name=>'EDITION_RULESET'
-,p_display_order=>30
-,p_column_identifier=>'C'
-,p_column_label=>unistr('Edici\00F3n o reglas')
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Edici\00F3n comercial concreta o variante de reglas fijada para el laboratorio; no presupone unas reglas universales.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401434607471081)
-,p_db_column_name=>'GAME_ID'
-,p_display_order=>10
-,p_column_identifier=>'A'
-,p_column_label=>'ID'
-,p_column_type=>'NUMBER'
-,p_display_text_as=>'HIDDEN_ESCAPE_SC'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401463139471081)
-,p_db_column_name=>'GAME_TYPE_CODE'
-,p_display_order=>50
-,p_column_identifier=>'E'
-,p_column_label=>'Tipo de juego'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Clasificaci\00F3n general del juego. Usa TRAD_CARD para cartas tradicionales, TRAD_BOARD para tablero tradicional, FAMILY para familiar, STRATEGY para estrategia, PARTY para fiesta y FILLER para un juego breve y f\00E1cil de sacar a mesa.')
-,p_ai_lov_type=>'SHARED'
-,p_ai_lov_id=>wwv_flow_imp.id(29320009916818881)
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401643497471081)
-,p_db_column_name=>'LANGUAGE_DEP_CODE'
-,p_display_order=>110
-,p_column_identifier=>'K'
-,p_column_label=>'Dependencia del idioma'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>'Cantidad de texto que hace falta comprender durante la partida. Usa NONE para ninguna, LOW para baja o poca, MEDIUM para media y HIGH para alta o mucha. Sin depender mucho del idioma incluye NONE o LOW.'
-,p_ai_lov_type=>'SHARED'
-,p_ai_lov_id=>wwv_flow_imp.id(29321655974818881)
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401715314471081)
-,p_db_column_name=>'MAX_PLAYERS'
-,p_display_order=>80
-,p_column_identifier=>'H'
-,p_column_label=>unistr('M\00E1ximo de jugadores')
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>'Para que un juego admita a N personas, este valor debe ser mayor o igual que N.'
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401763616471081)
-,p_db_column_name=>'MIN_PLAYERS'
-,p_display_order=>70
-,p_column_identifier=>'G'
-,p_column_label=>unistr('M\00EDnimo de jugadores')
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>'Para que un juego admita a N personas, este valor debe ser menor o igual que N.'
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71401947014471081)
-,p_db_column_name=>'PLAYED_YN'
-,p_display_order=>150
-,p_column_identifier=>'O'
-,p_column_label=>'Jugado'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Usa Y cuando hay al menos una partida completada y N cuando no hay ninguna. S\00ED, yes y bai significan Y; no y ez significan N.')
-,p_ai_lov_type=>'SHARED'
-,p_ai_lov_id=>wwv_flow_imp.id(29322130402818881)
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71402007792471081)
-,p_db_column_name=>'PLAY_COUNT'
-,p_display_order=>120
-,p_column_identifier=>'L'
-,p_column_label=>'Partidas completadas'
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('N\00FAmero de sesiones completadas registradas. Un valor cero significa que el juego todav\00EDa no ha tocado mesa.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71402149508471081)
-,p_db_column_name=>'PLAY_MODE_CODE'
-,p_display_order=>60
-,p_column_identifier=>'F'
-,p_column_label=>'Modo de juego'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Indica c\00F3mo interact\00FAan las personas. Usa COMP para competitivo, COOP para cooperativo o sin competir, TEAM para por equipos y MIXED para modalidad mixta.')
-,p_ai_lov_type=>'SHARED'
-,p_ai_lov_id=>wwv_flow_imp.id(29320745675818881)
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71402175109471081)
-,p_db_column_name=>'REFERENCE_DURATION_MIN'
-,p_display_order=>90
-,p_column_identifier=>'I'
-,p_column_label=>unistr('Duraci\00F3n de referencia en minutos')
-,p_column_type=>'NUMBER'
-,p_heading_alignment=>'RIGHT'
-,p_column_alignment=>'RIGHT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Duraci\00F3n orientativa de una partida, expresada siempre en minutos. Menos de una hora significa menos de 60.')
-);
-wwv_flow_imp_page.create_worksheet_column(
- p_id=>wwv_flow_imp.id(71402274810471081)
-,p_db_column_name=>'TITLE'
-,p_display_order=>20
-,p_column_identifier=>'B'
-,p_column_label=>'Juego'
-,p_column_type=>'STRING'
-,p_heading_alignment=>'LEFT'
-,p_use_as_row_header=>'N'
-,p_available_clientside=>'N'
-,p_ai_column_hint=>unistr('Nombre del juego o de la edici\00F3n incluida en la colecci\00F3n.')
-);
-wwv_flow_imp_page.create_worksheet_rpt(
- p_id=>wwv_flow_imp.id(71402445737471081)
-,p_application_user=>'APXWS_DEFAULT'
-,p_report_seq=>10
-,p_report_alias=>'primary'
-,p_status=>'PUBLIC'
-,p_is_default=>'Y'
-,p_report_columns=>'GAME_ID:TITLE:EDITION_RULESET:CULTURAL_SCOPE:GAME_TYPE_CODE:PLAY_MODE_CODE:MIN_PLAYERS:MAX_PLAYERS:REFERENCE_DURATION_MIN:COMPLEXITY_CODE:LANGUAGE_DEP_CODE:PLAY_COUNT:AVG_DURATION_MIN:DURATION_DRIFT_MIN:PLAYED_YN'
 );
 end;
 /

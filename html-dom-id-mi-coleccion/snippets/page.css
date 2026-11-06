@@ -1,10 +1,12 @@
 /* A single region: use its HTML DOM ID, not its component Static ID. */
 #collection_intro {
-    background: #f5f0e7;
-    color: #183d38;
-    border: 1px solid #e5ded1;
-    border-radius: 1rem;
+    background: linear-gradient(110deg, var(--ut-region-background-color), var(--ut-palette-primary-shade));
+    color: var(--ut-body-text-color);
+    border: 0;
+    border-radius: .75rem;
+    box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
     overflow: hidden;
+    margin-block-end: 1.5rem;
 }
 
 /* Own content classes, scoped to this region. */
@@ -22,14 +24,14 @@
 
 #collection_intro .collection-eyebrow {
     margin: 0 0 .6rem;
-    color: #426b60;
+    color: var(--ut-palette-primary);
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .1em;
     text-transform: uppercase;
 }
 
-#collection_intro h2 {
+#collection_intro h1 {
     margin: 0;
     color: inherit;
     font-size: clamp(1.6rem, 2.5vw, 2.25rem);
@@ -40,7 +42,8 @@
 
 #collection_intro .collection-description {
     margin: .75rem 0 0;
-    color: #426057;
+    color: inherit;
+    opacity: .75;
     max-width: 48ch;
 }
 
@@ -49,11 +52,6 @@
     max-width: 35%;
     flex-shrink: 0;
     display: block;
-}
-
-/* Keep the report's own toolbar, columns and controls. */
-#my_collection {
-    margin-block-start: 1.25rem;
 }
 
 @media (max-width: 640px) {
