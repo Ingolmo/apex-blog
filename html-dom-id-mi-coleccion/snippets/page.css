@@ -1,0 +1,60 @@
+/* A single region: use its HTML DOM ID, not its component Static ID. */
+#collection_intro {
+    background: linear-gradient(110deg, var(--ut-region-background-color), var(--ut-palette-primary-shade));
+    color: var(--ut-body-text-color);
+    border: 0;
+    border-radius: .75rem;
+    box-shadow: 0 8px 28px rgb(0 0 0 / 5%);
+    overflow: hidden;
+    margin-block-end: 1.5rem;
+}
+
+/* Own content classes, scoped to this region. */
+#collection_intro .collection-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.75rem 2rem;
+}
+
+#collection_intro .collection-copy {
+    min-width: 0;
+}
+
+#collection_intro .collection-eyebrow {
+    margin: 0 0 .6rem;
+    color: var(--ut-palette-primary);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+#collection_intro h1 {
+    margin: 0;
+    color: inherit;
+    font-size: clamp(1.6rem, 2.5vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.025em;
+}
+
+#collection_intro .collection-description {
+    margin: .75rem 0 0;
+    color: inherit;
+    opacity: .75;
+    max-width: 48ch;
+}
+
+#collection_intro .collection-art {
+    width: 260px;
+    max-width: 35%;
+    flex-shrink: 0;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    #collection_intro .collection-hero { padding: 1.5rem; }
+    #collection_intro .collection-art { display: none; }
+}
