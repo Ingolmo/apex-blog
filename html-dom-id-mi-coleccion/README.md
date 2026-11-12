@@ -1,7 +1,6 @@
 # HTML DOM ID en APEX: personalizar Inicio
 
-Ejemplo del artículo en preparación **HTML DOM ID en APEX: el Static ID que ya no era el que buscaba**.
-El enlace a Hashnode se añadirá al publicar.
+Ejemplo del artículo [HTML DOM ID en APEX: el Static ID que ya no era el que buscaba](https://juanl.hashnode.dev/html-dom-id-static-id-oracle-apex-26-1), publicado el 12 de noviembre de 2026.
 
 Continúa [la selección múltiple](../seleccion-multiple-interactive-report/): transforma la
 cabecera de **1 · Inicio** en la misma app, conservando sus accesos y los ejemplos V0–V4 y
